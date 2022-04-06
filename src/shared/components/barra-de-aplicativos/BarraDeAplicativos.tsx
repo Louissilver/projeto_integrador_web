@@ -59,8 +59,8 @@ const BarraDeAplicativos: React.FC = ({ children }) => {
   };
 
   return (
-    <Box display="flex" flexDirection="column" >
-      <AppBar position="sticky">
+    <Box display="flex" flexDirection="column">
+      <AppBar position="fixed">
         <Container maxWidth="lg">
           <Toolbar
             disableGutters
@@ -202,7 +202,12 @@ const BarraDeAplicativos: React.FC = ({ children }) => {
           </Toolbar>
         </Container>
       </AppBar>
-      <Box height="100vh">{children}</Box>
+      <Box
+        sx={{ marginTop: { xl: '68.5px', md: '64px', xs: '56px' } }}
+        height="100vh"
+      >
+        {children}
+      </Box>
     </Box>
   );
 };
