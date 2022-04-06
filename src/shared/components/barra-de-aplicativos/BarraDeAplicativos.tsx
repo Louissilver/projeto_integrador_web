@@ -61,7 +61,7 @@ const BarraDeAplicativos: React.FC = ({ children }) => {
   return (
     <Box display="flex" flexDirection="column">
       <AppBar position="fixed">
-        <Container maxWidth="lg">
+        <Container maxWidth="xl">
           <Toolbar
             disableGutters
             sx={{

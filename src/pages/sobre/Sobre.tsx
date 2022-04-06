@@ -4,22 +4,11 @@ import { LayoutBaseDePagina } from '../../shared/layouts/LayoutBaseDePagina';
 
 export const Sobre: React.FC = () => {
   const theme = useTheme();
-  const smDown = useMediaQuery(theme.breakpoints.down('sm'));
   const mdDown = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
     <LayoutBaseDePagina>
-      <Box
-        display="flex"
-        flexDirection="column"
-        padding={
-          smDown
-            ? theme.spacing(0, 1)
-            : mdDown
-            ? theme.spacing(0, 2)
-            : theme.spacing(0, 4)
-        }
-      >
+      <Box display="flex" flexDirection="column">
         <Typography
           margin="0 0 2rem 0"
           variant="h4"
@@ -49,7 +38,7 @@ export const Sobre: React.FC = () => {
           a, accumsan tortor.
         </Typography>
 
-        <Box width="50%" margin="2rem auto 0">
+        <Box width={mdDown ? '100%' : '50%'} margin="2rem auto 0">
           <img width="100%" src="./empreendimento.jpg" />
         </Box>
 
@@ -140,7 +129,7 @@ export const Sobre: React.FC = () => {
           a, accumsan tortor.
         </Typography>
 
-        <Box width="50%" margin="2rem auto 0">
+        <Box width={mdDown ? '100%' : '50%'} margin="2rem auto 0">
           <img width="100%" src="./historia.jpeg" />
         </Box>
       </Box>
