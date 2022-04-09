@@ -30,7 +30,7 @@ export const Cadastro: React.FC = () => {
       <Box display="flex" flexDirection="column" alignItems="center">
         <Typography
           margin="0 0 2rem 0"
-          variant="h3"
+          variant="h4"
           color={theme.palette.primary.main}
           textAlign="center"
           sx={{
@@ -98,9 +98,9 @@ export const Cadastro: React.FC = () => {
           id="nome"
           label="Nome completo"
           variant="outlined"
-          color="secondary"
-          InputLabelProps={{ sx: { color: theme.palette.secondary.main } }}
-          InputProps={{ sx: { color: theme.palette.secondary.main } }}
+          color="primary"
+          InputLabelProps={{ sx: { color: theme.palette.background.paper } }}
+          InputProps={{ sx: { color: theme.palette.background.paper } }}
         />
 
         <TextField
@@ -111,9 +111,9 @@ export const Cadastro: React.FC = () => {
           id="telefone"
           label="Telefone"
           variant="outlined"
-          color="secondary"
-          InputLabelProps={{ sx: { color: theme.palette.secondary.main } }}
-          InputProps={{ sx: { color: theme.palette.secondary.main } }}
+          color="primary"
+          InputLabelProps={{ sx: { color: theme.palette.background.paper } }}
+          InputProps={{ sx: { color: theme.palette.background.paper } }}
         />
 
         <FormControl
@@ -124,8 +124,8 @@ export const Cadastro: React.FC = () => {
         >
           <InputLabel
             margin="dense"
-            sx={{ color: theme.palette.secondary.main }}
-            color="secondary"
+            sx={{ color: theme.palette.background.paper }}
+            color="primary"
             id="cidade"
             variant="outlined"
           >
@@ -137,11 +137,10 @@ export const Cadastro: React.FC = () => {
             label="Cidade"
             value={cidade}
             onChange={handleCidade}
-            color="secondary"
+            color="primary"
+            sx={{ color: theme.palette.background.paper }}
           >
-            <MenuItem selected value={10}>
-              Canoas
-            </MenuItem>
+            <MenuItem value={10}>Canoas</MenuItem>
             <MenuItem value={20}>Estância Velha</MenuItem>
             <MenuItem value={30}>Esteio</MenuItem>
             <MenuItem value={40}>Ivoti</MenuItem>
