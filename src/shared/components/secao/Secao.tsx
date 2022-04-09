@@ -3,7 +3,7 @@ import Botao from '../botao/Botao';
 import Titulo from '../titulo/Titulo';
 
 interface ISecaoProps {
-  titulo: string;
+  titulo?: string | undefined;
   texto?: string | undefined;
   imagem?: string | undefined;
   labelBotao?: string | undefined;
@@ -22,11 +22,13 @@ const Secao: React.FC<ISecaoProps> = ({
 
   return (
     <Box display="flex" flexDirection="column" margin="0 0 2rem 0">
-      <Titulo titulo={titulo} />
+      {titulo && <Titulo titulo={titulo} />}
 
-      <Typography align={textAlign} color={theme.palette.secondary.dark}>
-        {texto}
-      </Typography>
+      {texto && (
+        <Typography align={textAlign} color={theme.palette.secondary.dark}>
+          {texto}
+        </Typography>
+      )}
 
       {imagem && (
         <Box width={mdDown ? '100%' : '50%'} margin="2rem auto 0">
