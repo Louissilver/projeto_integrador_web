@@ -9,38 +9,15 @@ import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import { Box, useTheme } from '@mui/material';
 
-const questoes = [
-  {
-    id: 'questao-1',
-    titulo: 'Qual a primeira pergunta do FAQ?',
-    resposta:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacinia pretium lacus. Praesent purus elit, tincidunt eu dictum id, aliquet ac leo. Maecenas mollis consequat ante sit amet viverra. Quisque a fermentum turpis, quis viverra lectus. Nullam sodales justo quis eros molestie lacinia. Phasellus sem dolor, auctor vel tellus sed, lobortis accumsan risus. Nullam libero odio, hendrerit quis luctus in, blandit in nisi.',
-  },
-  {
-    id: 'questao-2',
-    titulo: 'Qual a segunda pergunta do FAQ?',
-    resposta:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacinia pretium lacus. Praesent purus elit, tincidunt eu dictum id, aliquet ac leo. Maecenas mollis consequat ante sit amet viverra. Quisque a fermentum turpis, quis viverra lectus. Nullam sodales justo quis eros molestie lacinia. Phasellus sem dolor, auctor vel tellus sed, lobortis accumsan risus. Nullam libero odio, hendrerit quis luctus in, blandit in nisi.',
-  },
-  {
-    id: 'questao-3',
-    titulo: 'Qual a terceira pergunta do FAQ?',
-    resposta:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacinia pretium lacus. Praesent purus elit, tincidunt eu dictum id, aliquet ac leo. Maecenas mollis consequat ante sit amet viverra. Quisque a fermentum turpis, quis viverra lectus. Nullam sodales justo quis eros molestie lacinia. Phasellus sem dolor, auctor vel tellus sed, lobortis accumsan risus. Nullam libero odio, hendrerit quis luctus in, blandit in nisi.',
-  },
-  {
-    id: 'questao-4',
-    titulo: 'Qual a quarta pergunta do FAQ?',
-    resposta:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacinia pretium lacus. Praesent purus elit, tincidunt eu dictum id, aliquet ac leo. Maecenas mollis consequat ante sit amet viverra. Quisque a fermentum turpis, quis viverra lectus. Nullam sodales justo quis eros molestie lacinia. Phasellus sem dolor, auctor vel tellus sed, lobortis accumsan risus. Nullam libero odio, hendrerit quis luctus in, blandit in nisi.',
-  },
-  {
-    id: 'questao-5',
-    titulo: 'Qual a quinta pergunta do FAQ?',
-    resposta:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacinia pretium lacus. Praesent purus elit, tincidunt eu dictum id, aliquet ac leo. Maecenas mollis consequat ante sit amet viverra. Quisque a fermentum turpis, quis viverra lectus. Nullam sodales justo quis eros molestie lacinia. Phasellus sem dolor, auctor vel tellus sed, lobortis accumsan risus. Nullam libero odio, hendrerit quis luctus in, blandit in nisi.',
-  },
-];
+interface IAcordeaoProps {
+  questoes: IQuestoesContent[];
+}
+
+interface IQuestoesContent {
+  id: string;
+  titulo: string;
+  resposta: string;
+}
 
 const Accordion = styled((props: AccordionProps) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -71,7 +48,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   borderTop: `1px solid ${theme.palette.grey[400]}`,
 }));
 
-const Acordeao = () => {
+const Acordeao: React.FC<IAcordeaoProps> = ({ questoes }) => {
   const [expanded, setExpanded] = React.useState<string | false>('');
 
   const handleChange =

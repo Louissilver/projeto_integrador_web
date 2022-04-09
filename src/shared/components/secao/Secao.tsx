@@ -1,11 +1,12 @@
 import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
 import Botao from '../botao/Botao';
+import Titulo from '../titulo/Titulo';
 
 interface ISecaoProps {
   titulo: string;
-  texto: string;
-  imagem?: string;
-  labelBotao?: string;
+  texto?: string | undefined;
+  imagem?: string | undefined;
+  labelBotao?: string | undefined;
   textAlign: 'justify' | 'center';
 }
 
@@ -20,15 +21,8 @@ const Secao: React.FC<ISecaoProps> = ({
   const mdDown = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
-    <Box display="flex" flexDirection="column">
-      <Typography
-        margin="0 0 2rem 0"
-        variant="h4"
-        color={theme.palette.primary.main}
-        textAlign="center"
-      >
-        {titulo}
-      </Typography>
+    <Box display="flex" flexDirection="column" margin="0 0 2rem 0">
+      <Titulo titulo={titulo} />
 
       <Typography align={textAlign} color={theme.palette.secondary.dark}>
         {texto}
