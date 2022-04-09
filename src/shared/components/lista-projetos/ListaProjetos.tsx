@@ -6,6 +6,7 @@ import {
   CardContent,
   CardMedia,
   Typography,
+  useMediaQuery,
   useTheme,
 } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
@@ -25,6 +26,7 @@ interface IListaProjetosProps {
 
 const ListaProjetos: React.FC<IListaProjetosProps> = ({ projetos }) => {
   const theme = useTheme();
+  const smDown = useMediaQuery(theme.breakpoints.down('sm'));
 
   const navigate = useNavigate();
 
@@ -33,14 +35,21 @@ const ListaProjetos: React.FC<IListaProjetosProps> = ({ projetos }) => {
   };
 
   return (
-    <Box display="flex" mt="2rem" flexWrap="wrap" width="100%">
+    <Box
+      display="flex"
+      flexDirection={smDown ? 'column' : 'row'}
+      alignItems={smDown ? 'center' : 'center'}
+      flexWrap="wrap"
+      width="100%"
+      margin="2rem auto"
+    >
       {projetos.map(({ alt, imagem, titulo, cidade, descricao, to }) => {
         return (
           <Card
             key={to}
             sx={{
               maxWidth: 345,
-              margin: '0.4rem',
+              margin: '0.75rem auto',
               border: `1px solid ${theme.palette.grey[300]}`,
             }}
           >
