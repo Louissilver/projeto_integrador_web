@@ -9,7 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import { useNavigate } from 'react-router-dom';
+import { useMatch, useNavigate, useResolvedPath } from 'react-router-dom';
 import { Avatar } from '@mui/material';
 import { useTheme } from '@mui/system';
 
@@ -52,6 +52,12 @@ const BarraDeAplicativos: React.FC = ({ children }) => {
   };
 
   const navigate = useNavigate();
+
+  const handleSelected = (to: string) => {
+    const resolvedPath = useResolvedPath(to);
+    const match = useMatch({ path: resolvedPath.pathname, end: false });
+    return !!match;
+  };
 
   const handleClick = (to: string) => {
     handleCloseNavMenu();
@@ -154,7 +160,7 @@ const BarraDeAplicativos: React.FC = ({ children }) => {
                   <MenuItem key={page.to} onClick={() => handleClick(page.to)}>
                     <Typography
                       textAlign="center"
-                      color={theme.palette.secondary.dark}
+                      color={theme.palette.primary.contrastText}
                     >
                       {page.label}
                     </Typography>
@@ -193,6 +199,8 @@ const BarraDeAplicativos: React.FC = ({ children }) => {
                     my: 2,
                     color: theme.palette.primary.contrastText,
                     display: 'block',
+                    fontWeight: handleSelected(page.to) ? 'bolder' : '300',
+                    opacity: handleSelected(page.to) ? '90%' : '100%',
                   }}
                 >
                   {page.label}
