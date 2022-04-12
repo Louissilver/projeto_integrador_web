@@ -165,9 +165,9 @@ export const Rodape = () => {
           textAlign: 'center',
         }}
       >
-        &copy; Copyright 2022 - Projeto Integrador Web | Universidade La Salle
+        &copy; Copyright 2022 - CAP SERVIÇOS IMOBILIARIOS LTDA | CNPJ: 28.780.520/0001-83
         <br />
-        Chrystopher, Leonardo, Luís e Rafael
+        Rua: Gomes Jardim, 207, Sala 11 - Bairro Centro - CEP 93.510-370 - Novo Hamburgo/RS 
       </Typography>
     </Box>
   );
