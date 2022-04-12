@@ -119,7 +119,7 @@ const secoes = [
     textAlign: 'justify',
   },
   {
-    titulo: 'Nossa história',
+    titulo: 'Nossa qq',
     texto: `Nunc a libero at magna viverra molestie. Etiam mi urna, euismod id
     purus a, lacinia congue turpis. Vestibulum rhoncus at velit id
     sodales. Suspendisse dignissim sem ex, eget ultricies lectus efficitur
