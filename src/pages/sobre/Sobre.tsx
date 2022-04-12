@@ -4,7 +4,7 @@ import { LayoutBaseDePagina } from '../../shared/layouts/LayoutBaseDePagina';
 
 const secoes = [
   {
-    titulo: 'Quem somos?',
+    titulo: 'BABA?',
     texto: `Nunc a libero at magna viverra molestie. Etiam mi urna, euismod id
     purus a, lacinia congue turpis. Vestibulum rhoncus at velit id
     sodales. Suspendisse dignissim sem ex, eget ultricies lectus efficitur
