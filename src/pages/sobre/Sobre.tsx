@@ -4,7 +4,12 @@ import { LayoutBaseDePagina } from '../../shared/layouts/LayoutBaseDePagina';
 
 const secoes = [
   {
+<<<<<<< HEAD
     titulo: 'Quem somos?',
+=======
+    titulo: 'Quem baba?',
+
+>>>>>>> 97023ea2f2730469787a079d9e9ee30e8d3fbe72
     texto: `Nunc a libero at magna viverra molestie. Etiam mi urna, euismod id
     purus a, lacinia congue turpis. Vestibulum rhoncus at velit id
     sodales. Suspendisse dignissim sem ex, eget ultricies lectus efficitur
