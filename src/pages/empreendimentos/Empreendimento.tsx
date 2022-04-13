@@ -19,28 +19,12 @@ const projetos = [
       },
       {
         titulo: undefined,
-        texto: `INFRAESTRUTURA DO EMPREENDIMENTO:
-        🏢3 Torres em condomínio fechado
-        🏛️2 Elevadores por torre
-        🎡Playground
-        🚘Opção de vagas cobertas
-        🍾Salão de festas com churrasqueira
-        ⚱️Central de Gás
-        🗄️Medidor de gás individualizado
-        👮🏻‍♂️Portaria 24 horas
-        🤽🏼Piscinas Adulto e Infantil
-        🚗Vagas escrituradas
-        🚲Bicicletário
-        🐶Espaço Pet
-        🌞Sistema Fotovoltaico
-        🛢️Irrigação com Cisterna
-        🗑️Coleta Seletiva
-        
-        Rua Henri Dunant, 801`,
+        texto: 'INFRAESTRUTURA DO EMPREENDIMENTO:', 
         imagem: undefined,
         botao: undefined,
-        textAlign: 'justify',
+        textAlign: 'center',
       },
+
     ],
   },
   {
