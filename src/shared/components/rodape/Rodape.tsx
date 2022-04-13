@@ -167,7 +167,7 @@ export const Rodape = () => {
       >
         &copy; Copyright 2022 - CAP SERVIÇOS IMOBILIARIOS LTDA | CNPJ: 28.780.520/0001-83
         <br />
-        Rua: Gomes Jardim, 207, Sala 11 - Bairro Centro - CEP 93.510-370 - Novo Hamburgo/RS 
+        CRECI: 25.527J
       </Typography>
     </Box>
   );

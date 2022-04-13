@@ -50,10 +50,20 @@ const ListaProjetos: React.FC<IListaProjetosProps> = ({ projetos }) => {
             sx={{
               maxWidth: 345,
               margin: '0.75rem auto',
-              border: `1px solid ${theme.palette.grey[300]}`,
+              border: `px solid ${theme.palette.grey[300]}`,
             }}
           >
-            <CardMedia component="img" alt={alt} height="140" image={imagem} onClick={() => handleClick(to)}/>
+            <CardMedia component="img" 
+            alt={alt} 
+            height="140" 
+            image={imagem} 
+            onClick={() => handleClick(to)} 
+            sx={{
+              '&:hover': {
+                cursor: 'pointer',
+                opacity: '75%',
+              },
+            }}/>
             <CardContent
               sx={{ backgroundColor: theme.palette.background.default }}
             >
@@ -72,7 +82,7 @@ const ListaProjetos: React.FC<IListaProjetosProps> = ({ projetos }) => {
                 </Typography>
                 <Typography
                   gutterBottom
-                  color={theme.palette.grey[400]}
+                  color={theme.palette.grey[500]}
                   variant="caption"
                   component="div"
                 >
