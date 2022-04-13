@@ -4,165 +4,39 @@ import { LayoutBaseDePagina } from '../../shared/layouts/LayoutBaseDePagina';
 
 const secoes = [
   {
-    titulo: 'Quem somos?',
-    texto: `Nunc a libero at magna viverra molestie. Etiam mi urna, euismod id
-    purus a, lacinia congue turpis. Vestibulum rhoncus at velit id
-    sodales. Suspendisse dignissim sem ex, eget ultricies lectus efficitur
-    et. Morbi ac diam nunc. Fusce sodales consectetur dolor, ut tristique
-    odio pharetra eu. Maecenas ultrices, tortor ac pretium molestie,
-    lectus lorem lacinia eros, varius facilisis mauris sem nec ipsum.
-    Mauris purus eros, porta ut mollis non, sagittis at turpis. Ut
-    venenatis lacus purus, mattis pretium dui convallis sit amet. Class
-    aptent taciti sociosqu ad litora torquent per conubia nostra, per
-    inceptos himenaeos. Class aptent taciti sociosqu ad litora torquent
-    per conubia nostra, per inceptos himenaeos. Suspendisse maximus
-    vestibulum luctus. Donec viverra, dui eu lobortis eleifend, lorem
-    dolor accumsan lorem, ut lacinia libero nunc sed lectus. Aliquam ipsum
-    diam, egestas condimentum lacinia tempus, aliquet sed quam. Class
-    aptent taciti sociosqu ad litora torquent per conubia nostra, per
-    inceptos himenaeos. Fusce tempor mauris tristique, pellentesque magna
-    a, accumsan tortor.`,
-    imagem: './empreendimento.jpg',
-    botao: undefined,
-    textAlign: 'justify',
-  },
-  {
-    titulo: undefined,
-    texto: `Nunc a libero at magna viverra molestie. Etiam mi urna, euismod id
-    purus a, lacinia congue turpis. Vestibulum rhoncus at velit id
-    sodales. Suspendisse dignissim sem ex, eget ultricies lectus efficitur
-    et. Morbi ac diam nunc. Fusce sodales consectetur dolor, ut tristique
-    odio pharetra eu. Maecenas ultrices, tortor ac pretium molestie,
-    lectus lorem lacinia eros, varius facilisis mauris sem nec ipsum.
-    Mauris purus eros, porta ut mollis non, sagittis at turpis. Ut
-    venenatis lacus purus, mattis pretium dui convallis sit amet. Class
-    aptent taciti sociosqu ad litora torquent per conubia nostra, per
-    inceptos himenaeos. Class aptent taciti sociosqu ad litora torquent
-    per conubia nostra, per inceptos himenaeos. Suspendisse maximus
-    vestibulum luctus. Donec viverra, dui eu lobortis eleifend, lorem
-    dolor accumsan lorem, ut lacinia libero nunc sed lectus. Aliquam ipsum
-    diam, egestas condimentum lacinia tempus, aliquet sed quam. Class
-    aptent taciti sociosqu ad litora torquent per conubia nostra, per
-    inceptos himenaeos. Fusce tempor mauris tristique, pellentesque magna
-    a, accumsan tortor.`,
-    imagem: undefined,
-    botao: undefined,
-    textAlign: 'justify',
-  },
-  {
-    titulo: 'Valores',
-    texto: `Nunc a libero at magna viverra molestie. Etiam mi urna, euismod id
-    purus a, lacinia congue turpis. Vestibulum rhoncus at velit id
-    sodales. Suspendisse dignissim sem ex, eget ultricies lectus efficitur
-    et. Morbi ac diam nunc. Fusce sodales consectetur dolor, ut tristique
-    odio pharetra eu. Maecenas ultrices, tortor ac pretium molestie,
-    lectus lorem lacinia eros, varius facilisis mauris sem nec ipsum.
-    Mauris purus eros, porta ut mollis non, sagittis at turpis. Ut
-    venenatis lacus purus, mattis pretium dui convallis sit amet. Class
-    aptent taciti sociosqu ad litora torquent per conubia nostra, per
-    inceptos himenaeos. Class aptent taciti sociosqu ad litora torquent
-    per conubia nostra, per inceptos himenaeos. Suspendisse maximus
-    vestibulum luctus. Donec viverra, dui eu lobortis eleifend, lorem
-    dolor accumsan lorem, ut lacinia libero nunc sed lectus. Aliquam ipsum
-    diam, egestas condimentum lacinia tempus, aliquet sed quam. Class
-    aptent taciti sociosqu ad litora torquent per conubia nostra, per
-    inceptos himenaeos. Fusce tempor mauris tristique, pellentesque magna
-    a, accumsan tortor.`,
     imagem: undefined,
     botao: undefined,
     textAlign: 'justify',
   },
   {
     titulo: undefined,
-    texto: `Nunc a libero at magna viverra molestie. Etiam mi urna, euismod id
-    purus a, lacinia congue turpis. Vestibulum rhoncus at velit id
-    sodales. Suspendisse dignissim sem ex, eget ultricies lectus efficitur
-    et. Morbi ac diam nunc. Fusce sodales consectetur dolor, ut tristique
-    odio pharetra eu. Maecenas ultrices, tortor ac pretium molestie,
-    lectus lorem lacinia eros, varius facilisis mauris sem nec ipsum.
-    Mauris purus eros, porta ut mollis non, sagittis at turpis. Ut
-    venenatis lacus purus, mattis pretium dui convallis sit amet. Class
-    aptent taciti sociosqu ad litora torquent per conubia nostra, per
-    inceptos himenaeos. Class aptent taciti sociosqu ad litora torquent
-    per conubia nostra, per inceptos himenaeos. Suspendisse maximus
-    vestibulum luctus. Donec viverra, dui eu lobortis eleifend, lorem
-    dolor accumsan lorem, ut lacinia libero nunc sed lectus. Aliquam ipsum
-    diam, egestas condimentum lacinia tempus, aliquet sed quam. Class
-    aptent taciti sociosqu ad litora torquent per conubia nostra, per
-    inceptos himenaeos. Fusce tempor mauris tristique, pellentesque magna
-    a, accumsan tortor.`,
+    texto: ' Nosso propósito como empresa é oferecer um serviço de excelência nas negociações imobiliárias. Acima de tudo capacitando o profissional para entregar um resultado de qualidade e proporcionar a oportunidade de realizar seus próprios objetivos pessoais e profissionais de acordo com a sua ambição.',
     imagem: undefined,
     botao: undefined,
     textAlign: 'justify',
   },
+
+
   {
-    titulo: 'Princípios',
-    texto: `Nunc a libero at magna viverra molestie. Etiam mi urna, euismod id
-    purus a, lacinia congue turpis. Vestibulum rhoncus at velit id
-    sodales. Suspendisse dignissim sem ex, eget ultricies lectus efficitur
-    et. Morbi ac diam nunc. Fusce sodales consectetur dolor, ut tristique
-    odio pharetra eu. Maecenas ultrices, tortor ac pretium molestie,
-    lectus lorem lacinia eros, varius facilisis mauris sem nec ipsum.
-    Mauris purus eros, porta ut mollis non, sagittis at turpis. Ut
-    venenatis lacus purus, mattis pretium dui convallis sit amet. Class
-    aptent taciti sociosqu ad litora torquent per conubia nostra, per
-    inceptos himenaeos. Class aptent taciti sociosqu ad litora torquent
-    per conubia nostra, per inceptos himenaeos. Suspendisse maximus
-    vestibulum luctus. Donec viverra, dui eu lobortis eleifend, lorem
-    dolor accumsan lorem, ut lacinia libero nunc sed lectus. Aliquam ipsum
-    diam, egestas condimentum lacinia tempus, aliquet sed quam. Class
-    aptent taciti sociosqu ad litora torquent per conubia nostra, per
-    inceptos himenaeos. Fusce tempor mauris tristique, pellentesque magna
-    a, accumsan tortor.`,
+    titulo: 'Nossa Missão',
+    texto: 'Ser agente catalisador de sonhos de colaboradores e clientes.',
     imagem: undefined,
     botao: undefined,
-    textAlign: 'justify',
+    textAlign: 'center',
   },
   {
-    titulo: 'Nossa história',
-    texto: `Nunc a libero at magna viverra molestie. Etiam mi urna, euismod id
-    purus a, lacinia congue turpis. Vestibulum rhoncus at velit id
-    sodales. Suspendisse dignissim sem ex, eget ultricies lectus efficitur
-    et. Morbi ac diam nunc. Fusce sodales consectetur dolor, ut tristique
-    odio pharetra eu. Maecenas ultrices, tortor ac pretium molestie,
-    lectus lorem lacinia eros, varius facilisis mauris sem nec ipsum.
-    Mauris purus eros, porta ut mollis non, sagittis at turpis. Ut
-    venenatis lacus purus, mattis pretium dui convallis sit amet. Class
-    aptent taciti sociosqu ad litora torquent per conubia nostra, per
-    inceptos himenaeos. Class aptent taciti sociosqu ad litora torquent
-    per conubia nostra, per inceptos himenaeos. Suspendisse maximus
-    vestibulum luctus. Donec viverra, dui eu lobortis eleifend, lorem
-    dolor accumsan lorem, ut lacinia libero nunc sed lectus. Aliquam ipsum
-    diam, egestas condimentum lacinia tempus, aliquet sed quam. Class
-    aptent taciti sociosqu ad litora torquent per conubia nostra, per
-    inceptos himenaeos. Fusce tempor mauris tristique, pellentesque magna
-    a, accumsan tortor.`,
+    titulo: 'Nossa Visão',
+    texto: 'Ser referência de qualidade e eficiência no mercado imobiliário do RS até 2023.',
     imagem: undefined,
     botao: undefined,
-    textAlign: 'justify',
+    textAlign: 'center',
   },
   {
-    titulo: undefined,
-    texto: `Nunc a libero at magna viverra molestie. Etiam mi urna, euismod id
-    purus a, lacinia congue turpis. Vestibulum rhoncus at velit id
-    sodales. Suspendisse dignissim sem ex, eget ultricies lectus efficitur
-    et. Morbi ac diam nunc. Fusce sodales consectetur dolor, ut tristique
-    odio pharetra eu. Maecenas ultrices, tortor ac pretium molestie,
-    lectus lorem lacinia eros, varius facilisis mauris sem nec ipsum.
-    Mauris purus eros, porta ut mollis non, sagittis at turpis. Ut
-    venenatis lacus purus, mattis pretium dui convallis sit amet. Class
-    aptent taciti sociosqu ad litora torquent per conubia nostra, per
-    inceptos himenaeos. Class aptent taciti sociosqu ad litora torquent
-    per conubia nostra, per inceptos himenaeos. Suspendisse maximus
-    vestibulum luctus. Donec viverra, dui eu lobortis eleifend, lorem
-    dolor accumsan lorem, ut lacinia libero nunc sed lectus. Aliquam ipsum
-    diam, egestas condimentum lacinia tempus, aliquet sed quam. Class
-    aptent taciti sociosqu ad litora torquent per conubia nostra, per
-    inceptos himenaeos. Fusce tempor mauris tristique, pellentesque magna
-    a, accumsan tortor.`,
-    imagem: './historia.jpeg',
+    titulo: 'Nossos Valores',
+    texto: 'Entender, capacitar e realizar.',
+    imagem: undefined,
     botao: undefined,
-    textAlign: 'justify',
+    textAlign: 'center',
   },
 ];
 

@@ -34,12 +34,12 @@ export const Inicio: React.FC = () => {
         <Typography
           sx={{ fontWeight: 'bold', textTransform: 'uppercase' }}
           width="64%"
-          variant="h2"
-          fontSize={smDown ? '3rem' : mdDown ? '3rem' : '5rem'}
+          variant="h1"
+          fontSize={smDown ? '6rem' : mdDown ? '6rem' : '8rem'}
           padding={smDown ? '2rem' : mdDown ? '2rem' : '5rem 2rem'}
         >
-          Entendemos a tua <br /> necessidade <br /> e resolvemos <br /> o teu
-          problema
+          Entender <br /> Capacitar <br /> Realizar
+          
         </Typography>
       </Box>
     </LayoutBaseDePagina>
