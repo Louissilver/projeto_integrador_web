@@ -53,7 +53,7 @@ const ListaProjetos: React.FC<IListaProjetosProps> = ({ projetos }) => {
               border: `1px solid ${theme.palette.grey[300]}`,
             }}
           >
-            <CardMedia component="img" alt={alt} height="140" image={imagem} />
+            <CardMedia component="img" alt={alt} height="140" image={imagem} onClick={() => handleClick(to)}/>
             <CardContent
               sx={{ backgroundColor: theme.palette.background.default }}
             >

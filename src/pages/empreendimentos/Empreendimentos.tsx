@@ -5,7 +5,7 @@ import ListaProjetos from '../../shared/components/lista-projetos/ListaProjetos'
 
 const secoes = [
   {
-    titulo: 'Nossos projetos',
+    titulo: 'Nossos Empreendimentos',
     texto: `Fusce sodales consectetur dolor, ut tristique odio pharetra eu.
       Maecenas ultrices, tortor ac pretium molestie, lectus lorem lacinia
       eros, varius facilisis mauris sem nec ipsum. Mauris purus eros, porta
@@ -21,12 +21,12 @@ const projetos = [
   {
     alt: 'Texto alternativo',
     imagem:
-      'https://melnick.com.br/uploads/projects/52f745ee2883a8d484cbaeafdd805046.jpeg',
-    titulo: 'Go Cidade Baixa',
-    cidade: 'São Leopoldo',
+      'https://www.balizaconstrutora.com.br/wp-content/uploads/2021/12/002_IB_Fachadas_Noturna_004_HR-1-2048x1365.jpg',
+    titulo: 'Ibiza',
+    cidade: 'Novo Hamburgo',
     descricao:
-      'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
-    to: 'vivendas-do-vale',
+      'Conheça o Ibiza e viva um olhar para o futuro!',
+    to: 'ibiza',
   },
   {
     alt: 'Texto alternativo',
