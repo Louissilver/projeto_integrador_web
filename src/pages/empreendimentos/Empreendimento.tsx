@@ -9,7 +9,7 @@ const projetos = [
     secoes: [
       {
         titulo: 'Ibiza',
-        texto: `Chegou a hora conhecer o nosso mais novo lançamento em Novo Hamburgo, 
+        texto: `Chegou a hora <br/> conhecer o nosso mais novo lançamento em Novo Hamburgo, 
         o Primeiro Casa Verde E Amarela Da Região Sul Com Certificação De Construção Sustentável (Aqua – Hqe). Localizado no bairro Operário, 
         o empreendimento conta com apartamentos 1 e 2 dormitórios de até 56m², sacada com churrasqueira e uma ampla área de lazer.`,
         imagem:
@@ -19,12 +19,11 @@ const projetos = [
       },
       {
         titulo: undefined,
-        texto: 'INFRAESTRUTURA DO EMPREENDIMENTO:', 
+        texto: 'INFRAESTRUTURA DO EMPREENDIMENTO:',
         imagem: undefined,
         botao: undefined,
         textAlign: 'center',
       },
-
     ],
   },
   {
