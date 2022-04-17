@@ -25,9 +25,14 @@ const Secao: React.FC<ISecaoProps> = ({
       {titulo && <Titulo titulo={titulo} />}
 
       {texto && (
-        <Typography align={textAlign} color={theme.palette.secondary.dark}>
-          {texto}
-        </Typography>
+        <Typography
+          align={textAlign}
+          color={theme.palette.secondary.dark}
+          paragraph
+          component="p"
+          sx={{ whiteSpace: 'normal' }}
+          dangerouslySetInnerHTML={{ __html: `${texto}` }}
+        ></Typography>
       )}
 
       {imagem && (

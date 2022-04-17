@@ -53,9 +53,25 @@ const ListaProjetos: React.FC<IListaProjetosProps> = ({ projetos }) => {
               border: `1px solid ${theme.palette.grey[300]}`,
             }}
           >
-            <CardMedia component="img" alt={alt} height="140" image={imagem} onClick={() => handleClick(to)}/>
+            <CardMedia
+              component="img"
+              alt={alt}
+              height="140"
+              image={imagem}
+              onClick={() => handleClick(to)}
+              sx={{
+                '&:hover': {
+                  cursor: 'pointer',
+                  opacity: '75%',
+                },
+              }}
+            />
             <CardContent
-              sx={{ backgroundColor: theme.palette.background.default }}
+              sx={{
+                backgroundColor: theme.palette.background.default,
+                height: 100,
+                width: 345,
+              }}
             >
               <Box
                 display="flex"
