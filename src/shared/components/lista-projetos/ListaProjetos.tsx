@@ -50,7 +50,7 @@ const ListaProjetos: React.FC<IListaProjetosProps> = ({ projetos }) => {
             sx={{
               maxWidth: 345,
               margin: '0.75rem auto',
-              border: `1px solid ${theme.palette.grey[300]}`,
+              border: `px solid ${theme.palette.grey[300]}`,
             }}
           >
             <CardMedia
@@ -69,8 +69,8 @@ const ListaProjetos: React.FC<IListaProjetosProps> = ({ projetos }) => {
             <CardContent
               sx={{
                 backgroundColor: theme.palette.background.default,
-                height: 100,
                 width: 345,
+                height: 100,
               }}
             >
               <Box
@@ -88,7 +88,7 @@ const ListaProjetos: React.FC<IListaProjetosProps> = ({ projetos }) => {
                 </Typography>
                 <Typography
                   gutterBottom
-                  color={theme.palette.grey[400]}
+                  color={theme.palette.grey[500]}
                   variant="caption"
                   component="div"
                 >
