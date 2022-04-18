@@ -69,8 +69,9 @@ const ListaProjetos: React.FC<IListaProjetosProps> = ({ projetos }) => {
             <CardContent
               sx={{
                 backgroundColor: theme.palette.background.default,
-                width: 345,
                 height: 100,
+                width: 350,
+                boxSizing: 'border-box'
               }}
             >
               <Box
