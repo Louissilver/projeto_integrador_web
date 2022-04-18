@@ -84,7 +84,7 @@ const BarraDeAplicativos: React.FC = ({ children }) => {
             >
               <Avatar
                 alt="Logo da empresa"
-                src="./logo.svg"
+                src="./logob.svg"
                 sx={{
                   width: 56,
                   height: 56,
@@ -172,7 +172,7 @@ const BarraDeAplicativos: React.FC = ({ children }) => {
             <Box sx={{ flexGrow: 1 }} display="flex" alignItems="center">
               <Avatar
                 alt="Logo da empresa"
-                src="./logo.svg"
+                src="./logob.svg"
                 sx={{
                   width: { xs: theme.spacing(5), md: theme.spacing(7) },
                   height: { xs: theme.spacing(5), md: theme.spacing(7) },
