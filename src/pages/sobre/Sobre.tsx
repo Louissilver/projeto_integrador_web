@@ -1,4 +1,5 @@
-import { Box } from '@mui/material';
+import { Box, Divider, Grid } from '@mui/material';
+import { useTheme } from '@mui/material';
 import Secao from '../../shared/components/secao/Secao';
 import { LayoutBaseDePagina } from '../../shared/layouts/LayoutBaseDePagina';
 
@@ -14,55 +15,99 @@ const secoes = [
     imagem: undefined,
     botao: undefined,
     textAlign: 'justify',
+    titleAlign: 'center',
   },
   {
     titulo: undefined,
-    texto: ' Nosso propósito como empresa é oferecer um serviço de excelência nas negociações imobiliárias. Acima de tudo capacitando o profissional para entregar um resultado de qualidade e proporcionar a oportunidade de realizar seus próprios objetivos pessoais e profissionais de acordo com a sua ambição.',
+    texto:
+      ' Nosso propósito como empresa é oferecer um serviço de excelência nas negociações imobiliárias. Acima de tudo capacitando o profissional para entregar um resultado de qualidade e proporcionar a oportunidade de realizar seus próprios objetivos pessoais e profissionais de acordo com a sua ambição.',
     imagem: undefined,
     botao: undefined,
     textAlign: 'justify',
+    titleAlign: 'center',
   },
+];
 
-
+const valores = [
   {
     titulo: 'Nossa Missão',
-    texto: 'Ser agente catalisador de sonhos de colaboradores e clientes.',
+    subtitulo: 'Ser agente catalisador de sonhos de colaboradores e clientes.',
     imagem: undefined,
     botao: undefined,
-    textAlign: 'center',
+    subtitleAlign: 'center',
+    titleAlign: 'center',
   },
   {
     titulo: 'Nossa Visão',
-    texto: 'Ser referência de qualidade e eficiência no mercado imobiliário do RS até 2023.',
+    subtitulo:
+      'Ser referência de qualidade e eficiência no mercado imobiliário do RS até 2023.',
     imagem: undefined,
     botao: undefined,
-    textAlign: 'center',
+    subtitleAlign: 'center',
+    titleAlign: 'center',
   },
   {
     titulo: 'Nossos Valores',
-    texto: 'Entender, capacitar e realizar.',
+    subtitulo: 'Entender, capacitar e realizar.',
     imagem: undefined,
     botao: undefined,
-    textAlign: 'center',
+    subtitleAlign: 'center',
+    titleAlign: 'center',
   },
 ];
 
 export const Sobre: React.FC = () => {
+  const theme = useTheme();
   return (
     <LayoutBaseDePagina>
+      <Grid container spacing={6}>
+        <Grid item xs={6}></Grid>
+        <Grid item xs={6}></Grid>
+      </Grid>
       <Box display="flex" flexDirection="column">
-        {secoes.map(({ titulo, texto, imagem, botao, textAlign }, index) => {
-          return (
-            <Secao
-              key={'secao-' + index}
-              titulo={titulo}
-              texto={texto}
-              imagem={imagem}
-              labelBotao={botao}
-              textAlign={textAlign === 'justify' ? 'justify' : 'center'}
-            />
-          );
-        })}
+        <Box display="flex" flexDirection="column">
+          {valores.map(
+            (
+              { titulo, subtitulo, imagem, botao, subtitleAlign, titleAlign },
+              index
+            ) => {
+              return (
+                <Secao
+                  key={'secao-' + index}
+                  titulo={titulo}
+                  subtitulo={subtitulo}
+                  imagem={imagem}
+                  labelBotao={botao}
+                  subtitleAlign={
+                    subtitleAlign === 'justify' ? 'justify' : 'center'
+                  }
+                  titleAlign={titleAlign === 'justify' ? 'justify' : 'center'}
+                />
+              );
+            }
+          )}
+        </Box>
+        <Divider color={theme.palette.background.paper} />
+        <Box mt="2rem" display="flex" flexDirection="column">
+          {secoes.map(
+            (
+              { titulo, texto, imagem, botao, textAlign, titleAlign },
+              index
+            ) => {
+              return (
+                <Secao
+                  key={'secao-' + index}
+                  titulo={titulo}
+                  texto={texto}
+                  imagem={imagem}
+                  labelBotao={botao}
+                  textAlign={textAlign === 'justify' ? 'justify' : 'center'}
+                  titleAlign={titleAlign === 'justify' ? 'justify' : 'center'}
+                />
+              );
+            }
+          )}
+        </Box>
       </Box>
     </LayoutBaseDePagina>
   );
