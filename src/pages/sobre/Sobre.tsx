@@ -1,4 +1,4 @@
-import { Box, Divider, Grid } from '@mui/material';
+import { Box, Divider } from '@mui/material';
 import { useTheme } from '@mui/material';
 import Secao from '../../shared/components/secao/Secao';
 import { LayoutBaseDePagina } from '../../shared/layouts/LayoutBaseDePagina';
@@ -60,10 +60,6 @@ export const Sobre: React.FC = () => {
   const theme = useTheme();
   return (
     <LayoutBaseDePagina>
-      <Grid container spacing={6}>
-        <Grid item xs={6}></Grid>
-        <Grid item xs={6}></Grid>
-      </Grid>
       <Box display="flex" flexDirection="column">
         <Box display="flex" flexDirection="column">
           {valores.map(
