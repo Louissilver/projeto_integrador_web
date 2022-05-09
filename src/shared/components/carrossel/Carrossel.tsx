@@ -24,7 +24,7 @@ const Carrossel: React.FC<ICarrosselProps> = ({ items }) => {
   const mdDown = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
-    <Box width={mdDown ? '100%' : '50%'} margin="2rem auto 0">
+    <Box width={mdDown ? '200%' : '100%'} margin="2rem auto ">
       <Carousel
         fullHeightHover
         navButtonsAlwaysVisible
@@ -47,13 +47,15 @@ const Carrossel: React.FC<ICarrosselProps> = ({ items }) => {
 };
 
 const Item: React.FC<IItemProps> = ({ imagem }) => {
+
+
   return (
     <Card
       sx={{
         width: '100%',
       }}
     >
-      <CardActionArea>
+      
         <CardMedia
           sx={{
             objectFit: 'cover',
@@ -64,7 +66,6 @@ const Item: React.FC<IItemProps> = ({ imagem }) => {
           image={imagem}
           alt="green iguana"
         />
-      </CardActionArea>
     </Card>
   );
 };

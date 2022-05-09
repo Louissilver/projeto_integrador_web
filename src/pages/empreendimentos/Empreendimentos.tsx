@@ -6,11 +6,7 @@ import ListaProjetos from '../../shared/components/lista-projetos/ListaProjetos'
 const secoes = [
   {
     titulo: 'Nossos Empreendimentos',
-    texto: `Fusce sodales consectetur dolor, ut tristique odio pharetra eu.
-      Maecenas ultrices, tortor ac pretium molestie, lectus lorem lacinia
-      eros, varius facilisis mauris sem nec ipsum. Mauris purus eros, porta
-      ut mollis non, sagittis at turpis. Ut venenatis lacus purus, mattis
-      pretium dui convallis sit amet.`,
+    texto: 'Venha conhecer nossos empreendimentos.',
     imagem: undefined,
     botao: undefined,
     textAlign: 'center',
