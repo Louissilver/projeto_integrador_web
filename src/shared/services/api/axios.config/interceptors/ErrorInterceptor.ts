@@ -5,9 +5,11 @@ export const errorInterceptor = (error: AxiosError) => {
     return Promise.reject(new Error('Erro de conexão'));
   }
 
-  if (error.response?.status === 401) {
-    // To do
+  if (error.response?.status === 404) {
+    console.log(error);
+    return Promise.reject(error.response?.data);
   }
 
+  console.log(error);
   return Promise.reject(error);
 };
