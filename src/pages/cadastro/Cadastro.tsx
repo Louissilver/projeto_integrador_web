@@ -38,7 +38,6 @@ const secoes = [
 export const Cadastro: React.FC = () => {
   const theme = useTheme();
   const mdDown = useMediaQuery(theme.breakpoints.down('md'));
-
   const [checkMarcado, setCheckMarcado] = useState(false);
 
   const formRef = useRef<FormHandles>(null);
@@ -51,6 +50,12 @@ export const Cadastro: React.FC = () => {
         if (result instanceof Error) {
           alert(result.message);
         } else {
+          formRef.current?.setData({
+            nome: '',
+            telefone: '',
+            cidadeInteresse: undefined,
+          });
+          setCheckMarcado(false);
           alert('Registro cadastrado com sucesso.');
         }
       });
@@ -59,8 +64,6 @@ export const Cadastro: React.FC = () => {
 
   const handleCheck = (event: BaseSyntheticEvent) => {
     setCheckMarcado(event.target.checked);
-    console.log('Evento: ' + event.target.checked);
-    console.log('State: ' + checkMarcado);
   };
 
   return (
@@ -145,6 +148,8 @@ export const Cadastro: React.FC = () => {
             <FormControlLabel
               control={
                 <Checkbox
+                  name="termos"
+                  checked={checkMarcado}
                   onClick={(event) => {
                     handleCheck(event);
                   }}
