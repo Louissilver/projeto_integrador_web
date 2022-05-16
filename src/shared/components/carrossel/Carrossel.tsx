@@ -2,7 +2,6 @@ import React from 'react';
 import Carousel from 'react-material-ui-carousel';
 import {
   Box,
-  ButtonProps,
   Card,
   CardActionArea,
   Icon,
@@ -13,9 +12,10 @@ import {
 } from '@mui/material';
 import { CardMedia } from '@mui/material';
 
-type IItemProps = ButtonProps & {
+type IItemProps = {
   imagem: string;
   alt: string;
+  height?: string;
 };
 
 type ICarrosselProps = {
@@ -40,50 +40,27 @@ const style = {
 const Carrossel: React.FC<ICarrosselProps> = ({ items }) => {
   const theme = useTheme();
   const mdDown = useMediaQuery(theme.breakpoints.down('md'));
-
-  return (
-    <Box width={mdDown ? '200%' : '100%'} margin="2rem auto ">
-      <Carousel
-        fullHeightHover
-        navButtonsAlwaysVisible
-        autoPlay
-        indicators
-        cycleNavigation
-        duration={200}
-      >
-        {items.map((item, i) => (
-          <Item key={i} imagem={item.imagem} alt={item.alt} />
-        ))}
-      </Carousel>
-    </Box>
-  );
-};
-
-const Item: React.FC<IItemProps> = ({ imagem, alt, ...rest }) => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   return (
     <>
-      <CardActionArea {...rest} onClick={handleOpen}>
-        <Card
-          sx={{
-            width: '100%',
-          }}
-        >
-          <CardMedia
-            sx={{
-              objectFit: 'cover',
-              objectPosition: 'center',
-              height: '50vh',
-            }}
-            component="img"
-            image={imagem}
-            alt={alt}
-          />
-        </Card>
-      </CardActionArea>
-
+      <Box width={mdDown ? '200%' : '100%'} margin="2rem auto ">
+        <CardActionArea onClick={handleOpen}>
+          <Carousel
+            fullHeightHover
+            navButtonsAlwaysVisible
+            autoPlay
+            indicators
+            cycleNavigation
+            duration={200}
+          >
+            {items.map((item, i) => (
+              <Item key={i} imagem={item.imagem} alt={item.alt} />
+            ))}
+          </Carousel>
+        </CardActionArea>
+      </Box>
       <Modal
         open={open}
         onClose={handleClose}
@@ -94,6 +71,7 @@ const Item: React.FC<IItemProps> = ({ imagem, alt, ...rest }) => {
           <IconButton
             sx={{
               position: 'absolute',
+              zIndex: 2,
               right: 2,
               top: 2,
               color: 'white',
@@ -103,15 +81,42 @@ const Item: React.FC<IItemProps> = ({ imagem, alt, ...rest }) => {
           >
             <Icon>close</Icon>
           </IconButton>
-          <CardMedia
-            sx={{ width: '100%', height: '100%', borderRadius: 2 }}
-            component="img"
-            image={imagem}
-            alt="green iguana"
-          />
+          <Carousel
+            fullHeightHover
+            navButtonsAlwaysVisible
+            autoPlay
+            indicators={false}
+            cycleNavigation
+            duration={200}
+          >
+            {items.map((item, i) => (
+              <Item key={i} imagem={item.imagem} alt={item.alt} height="95vh" />
+            ))}
+          </Carousel>
         </Box>
       </Modal>
     </>
+  );
+};
+
+const Item: React.FC<IItemProps> = ({ imagem, alt, height }) => {
+  return (
+    <Card
+      sx={{
+        width: '100%',
+      }}
+    >
+      <CardMedia
+        sx={{
+          objectFit: 'cover',
+          objectPosition: 'center',
+          height: height || '50vh',
+        }}
+        component="img"
+        image={imagem}
+        alt={alt}
+      />
+    </Card>
   );
 };
 
