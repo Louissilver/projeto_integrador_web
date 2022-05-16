@@ -11,16 +11,16 @@ import {
 } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
-interface IProjetoProps {
-  alt: string;
-  imagem: string;
-  titulo: string;
-  cidade: string;
-  descricao: string;
+export interface IProjetoProps {
   to: string;
+  titulo: string;
+  descricao: string;
+  cidade: string;
+  thumb: string;
+  alt: string;
 }
 
-interface IListaProjetosProps {
+export interface IListaProjetosProps {
   projetos: IProjetoProps[];
 }
 
@@ -43,7 +43,7 @@ const ListaProjetos: React.FC<IListaProjetosProps> = ({ projetos }) => {
       width="100%"
       margin="2rem auto"
     >
-      {projetos.map(({ alt, imagem, titulo, cidade, descricao, to }) => {
+      {projetos.map(({ alt, thumb, titulo, cidade, descricao, to }) => {
         return (
           <Card
             key={to}
@@ -57,7 +57,7 @@ const ListaProjetos: React.FC<IListaProjetosProps> = ({ projetos }) => {
               component="img"
               alt={alt}
               height="140"
-              image={imagem}
+              image={thumb}
               onClick={() => handleClick(to)}
               sx={{
                 '&:hover': {
@@ -71,7 +71,7 @@ const ListaProjetos: React.FC<IListaProjetosProps> = ({ projetos }) => {
                 backgroundColor: theme.palette.background.default,
                 height: 100,
                 width: 350,
-                boxSizing: 'border-box'
+                boxSizing: 'border-box',
               }}
             >
               <Box

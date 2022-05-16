@@ -14,9 +14,8 @@ import {
 import { CardMedia } from '@mui/material';
 
 type IItemProps = ButtonProps & {
-  nome: string;
-  descricao: string;
   imagem: string;
+  alt: string;
 };
 
 type ICarrosselProps = {
@@ -53,19 +52,14 @@ const Carrossel: React.FC<ICarrosselProps> = ({ items }) => {
         duration={200}
       >
         {items.map((item, i) => (
-          <Item
-            key={i}
-            nome={item.nome}
-            descricao={item.descricao}
-            imagem={item.imagem}
-          />
+          <Item key={i} imagem={item.imagem} alt={item.alt} />
         ))}
       </Carousel>
     </Box>
   );
 };
 
-const Item: React.FC<IItemProps> = ({ imagem, ...rest }) => {
+const Item: React.FC<IItemProps> = ({ imagem, alt, ...rest }) => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -85,7 +79,7 @@ const Item: React.FC<IItemProps> = ({ imagem, ...rest }) => {
             }}
             component="img"
             image={imagem}
-            alt="green iguana"
+            alt={alt}
           />
         </Card>
       </CardActionArea>

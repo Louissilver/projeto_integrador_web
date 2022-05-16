@@ -1,7 +1,12 @@
-import { Box } from '@mui/material';
+import { Box, CircularProgress } from '@mui/material';
 import Secao from '../../shared/components/secao/Secao';
 import { LayoutBaseDePagina } from '../../shared/layouts/LayoutBaseDePagina';
 import ListaProjetos from '../../shared/components/lista-projetos/ListaProjetos';
+import { useEffect, useState } from 'react';
+import {
+  EmpreendimentoService,
+  IListagemEmpreendimentos,
+} from '../../shared/services/api/empreendimentos/EmpreendimentoService';
 
 const secoes = [
   {
@@ -13,110 +18,46 @@ const secoes = [
   },
 ];
 
-const projetos = [
-  {
-    alt: 'Texto alternativo',
-    imagem:
-      'https://www.balizaconstrutora.com.br/wp-content/uploads/2021/12/002_IB_Fachadas_Noturna_004_HR-1-2048x1365.jpg',
-    titulo: 'Ibiza',
-    cidade: 'Novo Hamburgo',
-    descricao:
-      'Conheça o Ibiza e viva um olhar para o futuro!',
-    to: 'ibiza',
-  },
-  {
-    alt: 'Texto alternativo',
-    imagem:
-      'https://melnick.com.br/uploads/projects/5c6e9760fc5e8770ba021f967bd8847a.jpeg',
-    titulo: 'Nilo Square',
-    cidade: 'Novo Hamburgo',
-    descricao:
-      'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
-    to: 'nilo-square',
-  },
-  {
-    alt: 'Texto alternativo',
-    imagem:
-      'https://melnick.com.br/uploads/projects/c03769db67ef2a5335db630261be18e7.jpeg',
-    titulo: 'Go Carlos Gomes',
-    cidade: 'Porto Alegre',
-    descricao:
-      'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
-    to: 'go-carlos-gomes',
-  },
-  {
-    alt: 'Texto alternativo',
-    imagem:
-      'https://melnick.com.br/uploads/projects/57a40ce0e11e802f8524494b05d62b31.jpeg',
-    titulo: 'Arte Country Club',
-    cidade: 'São Leopoldo',
-    descricao:
-      'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
-    to: 'arte-country-club',
-  },
-  {
-    alt: 'Texto alternativo',
-    imagem:
-      'https://melnick.com.br/uploads/projects/ad9137cd77275728fd09807a4070db57.jpeg',
-    titulo: 'Hill Side',
-    cidade: 'Ivoti',
-    descricao:
-      'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
-    to: 'hill-side',
-  },
-  {
-    alt: 'Texto alternativo',
-    imagem:
-      'https://melnick.com.br/uploads/projects/2a65ec17807d9d661710c3e0a53dd1c7.jpeg',
-    titulo: 'Seen Boa Vista',
-    cidade: 'Sapucaia do Sul',
-    descricao:
-      'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
-    to: 'seen-boa-vista',
-  },
-  {
-    alt: 'Texto alternativo',
-    imagem:
-      'https://melnick.com.br/uploads/projects/e54e97306376b76ba3789b4ec80fdd77.jpeg',
-    titulo: 'Go Rio Branco',
-    cidade: 'Novo Hamburgo',
-    descricao:
-      'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
-    to: 'go-rio-branco',
-  },
-  {
-    alt: 'Texto alternativo',
-    imagem:
-      'https://melnick.com.br/uploads/projects/eeaf0623930f4d8f2c6567ea00db0911.jpeg',
-    titulo: 'Botanique Résidence',
-    cidade: 'Esteio',
-    descricao:
-      'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
-    to: 'botanique-residence',
-  },
-  {
-    alt: 'Texto alternativo',
-    imagem:
-      'https://melnick.com.br/uploads/projects/a5039385a4fdd69ea877a38f94b5c185.jpeg',
-    titulo: 'Grand Park Lindóia',
-    cidade: 'Estância Velha',
-    descricao:
-      'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
-    to: 'grand-park-lindoia',
-  },
-  {
-    alt: 'Texto alternativo',
-    imagem:
-      'https://melnick.com.br/uploads/projects/0707c532d24ba1ceadfadbc681351225.jpeg',
-    titulo: 'Casaviva',
-    cidade: 'Canoas',
-    descricao:
-      'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica',
-    to: 'casaviva',
-  },
-];
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: '100vw',
+  height: '100%',
+  bgcolor: 'background.paper',
+  opacity: '50%',
+  boxShadow: 24,
+};
 
 export const Empreendimentos: React.FC = () => {
+  const [projetos, setProjetos] = useState<IListagemEmpreendimentos[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    setIsLoading(true);
+
+    EmpreendimentoService.getAll().then((result) => {
+      setIsLoading(false);
+
+      if (result instanceof Error) {
+        alert(result.message);
+      } else {
+        setProjetos(
+          result.data.empreendimentos.map((empreendimento) => ({
+            id: empreendimento.id,
+            to: empreendimento.to,
+            titulo: empreendimento.titulo,
+            descricao: empreendimento.descricao,
+            cidade: empreendimento.cidade,
+            thumb: empreendimento.thumb,
+            alt: empreendimento.alt,
+          }))
+        );
+      }
+    });
+  }, []);
+
   return (
     <LayoutBaseDePagina>
       <Box display="flex" flexDirection="column">
@@ -133,7 +74,19 @@ export const Empreendimentos: React.FC = () => {
           );
         })}
       </Box>
-
+      {isLoading && (
+        <Box sx={style}>
+          <CircularProgress
+            size={82}
+            sx={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              opacity: '100%',
+            }}
+          />
+        </Box>
+      )}
       <ListaProjetos projetos={projetos}></ListaProjetos>
     </LayoutBaseDePagina>
   );
