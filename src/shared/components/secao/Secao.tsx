@@ -1,5 +1,11 @@
-import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
-import Botao from '../botao/Botao';
+import {
+  Box,
+  Button,
+  Link,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
 import Titulo from '../titulo/Titulo';
 
 interface ISecaoProps {
@@ -11,6 +17,7 @@ interface ISecaoProps {
   textAlign?: 'justify' | 'center';
   titleAlign?: 'justify' | 'center';
   subtitleAlign?: 'justify' | 'center';
+  to?: string | undefined;
 }
 
 const Secao: React.FC<ISecaoProps> = ({
@@ -22,6 +29,7 @@ const Secao: React.FC<ISecaoProps> = ({
   textAlign,
   titleAlign,
   subtitleAlign,
+  to,
 }) => {
   const theme = useTheme();
   const mdDown = useMediaQuery(theme.breakpoints.down('md'));
@@ -60,7 +68,32 @@ const Secao: React.FC<ISecaoProps> = ({
         </Box>
       )}
 
-      {labelBotao && <Botao label={labelBotao} />}
+      {labelBotao && (
+        <Button
+          variant="contained"
+          size="large"
+          sx={{
+            width: mdDown ? '95%' : '40%',
+            textTransform: 'uppercase',
+            fontWeight: 'lighter',
+            margin: '2rem auto',
+          }}
+        >
+          <Link
+            href={to}
+            target="_blank"
+            sx={{
+              width: '100%',
+              color: theme.palette.secondary.contrastText,
+              margin: 0,
+              padding: 0,
+              textDecoration: 'none',
+            }}
+          >
+            {labelBotao}
+          </Link>
+        </Button>
+      )}
     </Box>
   );
 };

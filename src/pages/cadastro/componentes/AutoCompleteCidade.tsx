@@ -52,7 +52,7 @@ export const AutoCompleteCidade: React.FC<IAutoCompleteCidadeProps> = ({
         setIsLoading(false);
 
         if (result instanceof Error) {
-          alert(result.message);
+          console.log(result.message);
         } else {
           setOpcoes(
             result.data.cidades.map((cidade) => ({
@@ -81,7 +81,7 @@ export const AutoCompleteCidade: React.FC<IAutoCompleteCidadeProps> = ({
       loading={isLoading}
       openText="Abrir"
       closeText="Fechar"
-      noOptionsText="Sem opções"
+      noOptionsText="Não foram encontradas opções. Tente novamente mais tarde."
       loadingText="Carregando..."
       disablePortal
       popupIcon={

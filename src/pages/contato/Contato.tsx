@@ -17,6 +17,7 @@ const secoes = [
     imagem: undefined,
     botao: 'Quero me candidatar',
     textAlign: 'center',
+    to: 'https://web.whatsapp.com/send?phone=5551999282800&text=Oi%2C+Maike...',
   },
 ];
 
@@ -60,18 +61,21 @@ export const Contato: React.FC = () => {
   return (
     <LayoutBaseDePagina>
       <Box display="flex" flexDirection="column" alignItems="center">
-        {secoes.map(({ titulo, texto, imagem, botao, textAlign }, index) => {
-          return (
-            <Secao
-              key={'secao-' + index}
-              titulo={titulo}
-              texto={texto}
-              imagem={imagem}
-              labelBotao={botao}
-              textAlign={textAlign === 'justify' ? 'justify' : 'center'}
-            />
-          );
-        })}
+        {secoes.map(
+          ({ titulo, texto, imagem, botao, textAlign, to }, index) => {
+            return (
+              <Secao
+                key={'secao-' + index}
+                titulo={titulo}
+                texto={texto}
+                imagem={imagem}
+                labelBotao={botao}
+                textAlign={textAlign === 'justify' ? 'justify' : 'center'}
+                to={to}
+              />
+            );
+          }
+        )}
 
         <Divider
           flexItem
