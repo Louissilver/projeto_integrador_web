@@ -150,11 +150,10 @@ const ModalTermosDeAceite: React.FC<IModalTermosDeAceiteProps> = ({
               right: 2,
               top: 2,
               color: theme.palette.background.paper,
-              textShadow: '1px 2px 2px black',
             }}
             onClick={handleClose}
           >
-            <Icon>close</Icon>
+            <Icon>disabled_by_default</Icon>
           </IconButton>
           <Typography
             color={theme.palette.background.paper}

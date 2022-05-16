@@ -75,11 +75,10 @@ const Carrossel: React.FC<ICarrosselProps> = ({ items }) => {
               right: 2,
               top: 2,
               color: 'white',
-              textShadow: '3px 2px 2px black',
             }}
             onClick={handleClose}
           >
-            <Icon>close</Icon>
+            <Icon>disabled_by_default</Icon>
           </IconButton>
           <Carousel
             fullHeightHover={false}
