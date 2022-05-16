@@ -1,4 +1,4 @@
-import { Box, CircularProgress } from '@mui/material';
+import { Box, CircularProgress, Typography } from '@mui/material';
 import Secao from '../../shared/components/secao/Secao';
 import { LayoutBaseDePagina } from '../../shared/layouts/LayoutBaseDePagina';
 import ListaProjetos from '../../shared/components/lista-projetos/ListaProjetos';
@@ -7,6 +7,7 @@ import {
   EmpreendimentoService,
   IListagemEmpreendimentos,
 } from '../../shared/services/api/empreendimentos/EmpreendimentoService';
+import { useTheme } from '@mui/system';
 
 const secoes = [
   {
@@ -19,7 +20,7 @@ const secoes = [
 ];
 
 const style = {
-  position: 'absolute',
+  position: 'fixed',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
@@ -28,11 +29,13 @@ const style = {
   bgcolor: 'background.paper',
   opacity: '50%',
   boxShadow: 24,
+  overflow: 'hidden',
 };
 
 export const Empreendimentos: React.FC = () => {
   const [projetos, setProjetos] = useState<IListagemEmpreendimentos[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const theme = useTheme();
 
   useEffect(() => {
     setIsLoading(true);
@@ -41,7 +44,7 @@ export const Empreendimentos: React.FC = () => {
       setIsLoading(false);
 
       if (result instanceof Error) {
-        alert(result.message);
+        console.log(result.message);
       } else {
         setProjetos(
           result.data.empreendimentos.map((empreendimento) => ({
@@ -86,6 +89,17 @@ export const Empreendimentos: React.FC = () => {
             }}
           />
         </Box>
+      )}
+      {projetos.length == 0 && !isLoading && (
+        <Typography
+          margin="1rem 0 2rem 0"
+          variant="h6"
+          color={theme.palette.background.paper}
+          textAlign="center"
+        >
+          Não foi possível encontrar nenhum projeto agora. Por favor, tente
+          novamente mais tarde.
+        </Typography>
       )}
       <ListaProjetos projetos={projetos}></ListaProjetos>
     </LayoutBaseDePagina>

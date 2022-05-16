@@ -48,7 +48,7 @@ const Carrossel: React.FC<ICarrosselProps> = ({ items }) => {
       <Box width={mdDown ? '200%' : '100%'} margin="2rem auto ">
         <CardActionArea onClick={handleOpen}>
           <Carousel
-            fullHeightHover
+            fullHeightHover={false}
             navButtonsAlwaysVisible
             autoPlay
             indicators
@@ -82,7 +82,7 @@ const Carrossel: React.FC<ICarrosselProps> = ({ items }) => {
             <Icon>close</Icon>
           </IconButton>
           <Carousel
-            fullHeightHover
+            fullHeightHover={false}
             navButtonsAlwaysVisible
             autoPlay
             indicators={false}

@@ -1,4 +1,4 @@
-import { Box, CircularProgress } from '@mui/material';
+import { Box, CircularProgress, Typography, useTheme } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Carrossel from '../../shared/components/carrossel/Carrossel';
@@ -11,7 +11,7 @@ import {
 } from '../../shared/services/api/empreendimentos/EmpreendimentoService';
 
 const style = {
-  position: 'absolute',
+  position: 'fixed',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
@@ -20,10 +20,12 @@ const style = {
   bgcolor: 'background.paper',
   opacity: '50%',
   boxShadow: 24,
+  overflow: 'hidden',
 };
 
 export const Empreendimento: React.FC = () => {
   const location = useLocation();
+  const theme = useTheme();
   const [projetos, setProjetos] = useState<IDetalheEmpreendimento>({
     to: '',
     titulo: '',
@@ -41,7 +43,7 @@ export const Empreendimento: React.FC = () => {
       setIsLoading(false);
 
       if (result instanceof Error) {
-        alert(result.message);
+        console.log(result.message);
       } else {
         setProjetos({
           to: result.empreendimentos.to,
@@ -68,14 +70,27 @@ export const Empreendimento: React.FC = () => {
           />
         </Box>
       )}
-      <Box display="flex" flexDirection="column">
-        <Box key={projetos?.to}>
-          <Titulo titulo={projetos?.titulo} />
-          <Carrossel items={projetos?.imagens} />
-          <br />
-          <Secao texto={projetos?.texto} textAlign="justify" />
+      {projetos.texto == '' && !isLoading && (
+        <Typography
+          margin="1rem 0 2rem 0"
+          variant="h6"
+          color={theme.palette.background.paper}
+          textAlign="center"
+        >
+          Não foi possível encontrar o projeto agora. Por favor, tente novamente
+          mais tarde.
+        </Typography>
+      )}
+      {projetos.texto != '' && !isLoading && (
+        <Box display="flex" flexDirection="column">
+          <Box key={projetos?.to}>
+            <Titulo titulo={projetos?.titulo} />
+            <Carrossel items={projetos?.imagens} />
+            <br />
+            <Secao texto={projetos?.texto} textAlign="justify" />
+          </Box>
         </Box>
-      </Box>
+      )}
     </LayoutBaseDePagina>
   );
 };
