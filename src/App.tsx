@@ -1,4 +1,5 @@
 import { BrowserRouter } from 'react-router-dom';
+import './shared/forms/TraducoesYup';
 import { AppRoutes } from './routes';
 import BarraDeAplicativos from './shared/components/barra-de-aplicativos/BarraDeAplicativos';
 import { Rodape } from './shared/components/rodape/Rodape';

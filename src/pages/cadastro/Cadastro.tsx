@@ -4,25 +4,46 @@ import {
   Checkbox,
   Divider,
   FormControlLabel,
+  FormGroup,
+  FormHelperText,
+  Snackbar,
+  Stack,
   Typography,
   useMediaQuery,
   useTheme,
 } from '@mui/material';
+import MuiAlert, { AlertProps } from '@mui/material/Alert';
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
-import { BaseSyntheticEvent, useRef, useState } from 'react';
+import { BaseSyntheticEvent, forwardRef, useRef, useState } from 'react';
 import Secao from '../../shared/components/secao/Secao';
-import { VTextField } from '../../shared/forms';
+import { IVFormErrors, VTextField } from '../../shared/forms';
 import { LayoutBaseDePagina } from '../../shared/layouts/LayoutBaseDePagina';
 import { ClienteService } from '../../shared/services/api/clientes/ClienteService';
 import { AutoCompleteCidade } from './componentes/AutoCompleteCidade';
 import ModalTermosDeAceite from './componentes/ModalTermosDeAceite';
+import * as yup from 'yup';
 
 interface IFormData {
   nomeCompleto: string;
   telefone: string;
   cidadeInteresse: string;
 }
+
+const phoneRegExp =
+  /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+
+const formValidationSchema: yup.SchemaOf<IFormData> = yup.object().shape({
+  nomeCompleto: yup.string().required().min(3),
+  telefone: yup
+    .string()
+    .required()
+    .matches(
+      phoneRegExp,
+      'O número de telefone não é válido. Tente o formato "5199998888"'
+    ),
+  cidadeInteresse: yup.string().required(),
+});
 
 const secoes = [
   {
@@ -36,31 +57,71 @@ const secoes = [
   },
 ];
 
+const Alert = forwardRef<HTMLDivElement, AlertProps>(function Alert(
+  props,
+  ref
+) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+
 export const Cadastro: React.FC = () => {
   const theme = useTheme();
   const mdDown = useMediaQuery(theme.breakpoints.down('md'));
   const [checkMarcado, setCheckMarcado] = useState(false);
+  const [checkMarcadoError, setCheckMarcadoError] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const formRef = useRef<FormHandles>(null);
 
+  const handleClose = (
+    event?: React.SyntheticEvent | Event,
+    reason?: string
+  ) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
+
   const handleSave = (dados: IFormData) => {
     if (!checkMarcado) {
-      alert('Os termos não foram aceitos.');
+      setCheckMarcadoError(true);
     } else {
-      ClienteService.create(dados).then((result) => {
-        if (result instanceof Error) {
-          alert(result.message);
-        } else {
-          formRef.current?.setData({
-            nome: '',
-            telefone: '',
-            cidadeInteresse: undefined,
-          });
-          setCheckMarcado(false);
-          alert('Registro cadastrado com sucesso.');
-        }
-      });
+      setCheckMarcadoError(false);
     }
+    formValidationSchema
+      .validate(dados, { abortEarly: false })
+      .then((dadosValidados) => {
+        ClienteService.create(dadosValidados).then((result) => {
+          if (result instanceof Error) {
+            alert(result.message);
+          } else {
+            if (!checkMarcado) {
+              setCheckMarcadoError(true);
+            } else {
+              setCheckMarcadoError(false);
+              formRef.current?.setData({
+                nomeCompleto: '',
+                telefone: '',
+                cidadeInteresse: undefined,
+              });
+              setCheckMarcado(false);
+              setOpen(true);
+            }
+          }
+        });
+      })
+      .catch((errors: yup.ValidationError) => {
+        const validationErrors: IVFormErrors = {};
+
+        errors.inner.forEach((error) => {
+          if (!error.path) return;
+          validationErrors[error.path] = error.message;
+        });
+
+        formRef.current?.setErrors(validationErrors);
+      });
   };
 
   const handleCheck = (event: BaseSyntheticEvent) => {
@@ -124,8 +185,8 @@ export const Cadastro: React.FC = () => {
             <VTextField
               fullWidth
               margin="normal"
-              id="nome"
-              name="nome"
+              id="nomeCompleto"
+              name="nomeCompleto"
               label="Nome completo"
               variant="outlined"
               color="primary"
@@ -149,26 +210,32 @@ export const Cadastro: React.FC = () => {
 
             <AutoCompleteCidade />
 
-            <FormControlLabel
-              control={
-                <Checkbox
-                  name="termos"
-                  checked={checkMarcado}
-                  onClick={(event) => {
-                    handleCheck(event);
-                  }}
-                />
-              }
-              label={
-                <Box display="flex">
-                  <Typography sx={{ color: theme.palette.secondary.main }}>
-                    Declaro que li e aceito os
-                  </Typography>
-                  <ModalTermosDeAceite label="&nbsp;termos." />
-                </Box>
-              }
-            />
-
+            <FormGroup>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    name="termos"
+                    checked={checkMarcado}
+                    onClick={(event) => {
+                      handleCheck(event);
+                    }}
+                  />
+                }
+                label={
+                  <Box display="flex">
+                    <Typography sx={{ color: theme.palette.secondary.main }}>
+                      Declaro que li e aceito os
+                    </Typography>
+                    <ModalTermosDeAceite label="&nbsp;termos." />
+                  </Box>
+                }
+              />
+              {checkMarcadoError && (
+                <FormHelperText error>
+                  O aceite dos termos é obrigatório para realizar o cadastro.
+                </FormHelperText>
+              )}
+            </FormGroup>
             <Button
               type="submit"
               variant="contained"
@@ -184,6 +251,22 @@ export const Cadastro: React.FC = () => {
               Enviar
             </Button>
           </Form>
+          <Stack spacing={2} sx={{ width: '100%' }}>
+            <Snackbar
+              anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+              open={open}
+              autoHideDuration={6000}
+              onClose={handleClose}
+            >
+              <Alert
+                onClose={handleClose}
+                severity="success"
+                sx={{ width: '100%' }}
+              >
+                Registro cadastrado com sucesso.
+              </Alert>
+            </Snackbar>
+          </Stack>
         </Box>
       </Box>
     </LayoutBaseDePagina>
