@@ -17,10 +17,12 @@
     "@unform/core": "^2.1.6",
     "@unform/web": "^2.1.6",
     "axios": "^0.26.1",
+    "dotenv": "^16.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-material-ui-carousel": "^3.3.3",
-    "react-router-dom": "6"
+    "react-router-dom": "6",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.2",
