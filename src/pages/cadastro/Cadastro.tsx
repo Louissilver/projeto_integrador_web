@@ -23,6 +23,7 @@ import { ClienteService } from '../../shared/services/api/clientes/ClienteServic
 import { AutoCompleteCidade } from './componentes/AutoCompleteCidade';
 import ModalTermosDeAceite from './componentes/ModalTermosDeAceite';
 import * as yup from 'yup';
+import { VPhoneTextField } from '../../shared/forms/VPhoneTextField';
 
 interface IFormData {
   nomeCompleto: string;
@@ -30,18 +31,14 @@ interface IFormData {
   cidadeInteresse: string;
 }
 
-const phoneRegExp =
-  /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+const phoneRegExp = RegExp('^\\([\\d]{2}\\) \\d [\\d]{4}\\-[\\d]{4}$');
 
 const formValidationSchema: yup.SchemaOf<IFormData> = yup.object().shape({
   nomeCompleto: yup.string().required().min(3),
   telefone: yup
     .string()
     .required()
-    .matches(
-      phoneRegExp,
-      'O número de telefone não é válido. Tente o formato "5199998888"'
-    ),
+    .matches(phoneRegExp, 'O número de telefone não é válido.'),
   cidadeInteresse: yup.string().required(),
 });
 
@@ -126,6 +123,7 @@ export const Cadastro: React.FC = () => {
 
   const handleCheck = (event: BaseSyntheticEvent) => {
     setCheckMarcado(event.target.checked);
+    setCheckMarcadoError(!event.target.checked);
   };
 
   return (
@@ -195,12 +193,12 @@ export const Cadastro: React.FC = () => {
               }}
             />
 
-            <VTextField
+            <VPhoneTextField
               fullWidth
               margin="normal"
               id="telefone"
               name="telefone"
-              label="Telefone"
+              label="Telefone celular"
               variant="outlined"
               color="primary"
               InputLabelProps={{
