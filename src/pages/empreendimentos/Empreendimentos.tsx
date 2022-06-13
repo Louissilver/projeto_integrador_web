@@ -42,12 +42,11 @@ export const Empreendimentos: React.FC = () => {
 
     EmpreendimentoService.getAll().then((result) => {
       setIsLoading(false);
-
       if (result instanceof Error) {
         console.log(result.message);
       } else {
         setProjetos(
-          result.data.empreendimentos.map((empreendimento) => ({
+          result.data.map((empreendimento) => ({
             id: empreendimento.id,
             to: empreendimento.to,
             titulo: empreendimento.titulo,

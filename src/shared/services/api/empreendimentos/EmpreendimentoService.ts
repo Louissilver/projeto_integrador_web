@@ -1,12 +1,8 @@
 import { Api } from '../axios.config';
 
 type TEmpreendimentosComTotalCount = {
-  data: IEmpreendimentos;
+  data: IListagemEmpreendimentos[];
 };
-
-export interface IEmpreendimentos {
-  empreendimentos: IListagemEmpreendimentos[];
-}
 
 export interface IListagemEmpreendimentos {
   id: number;
@@ -17,10 +13,6 @@ export interface IListagemEmpreendimentos {
   thumb: string;
   alt: string;
 }
-
-type TEmpreendimento = {
-  empreendimentos: IDetalheEmpreendimento;
-};
 
 export interface IImagensProps {
   imagem: string;
@@ -38,7 +30,6 @@ const getAll = async (): Promise<TEmpreendimentosComTotalCount | Error> => {
   try {
     const urlRelativa = '/empreendimentos';
     const { data } = await Api.get(urlRelativa);
-
     if (data) {
       return {
         data,
@@ -52,7 +43,7 @@ const getAll = async (): Promise<TEmpreendimentosComTotalCount | Error> => {
     );
   }
 };
-const getById = async (id: string): Promise<TEmpreendimento | Error> => {
+const getById = async (id: string): Promise<IDetalheEmpreendimento | Error> => {
   try {
     const { data } = await Api.get(`/empreendimentos/${id}`);
 

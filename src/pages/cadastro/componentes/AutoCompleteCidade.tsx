@@ -1,32 +1,30 @@
 import { useEffect, useMemo, useState } from 'react';
-import {
-  Autocomplete,
-  CircularProgress,
-  TextField,
-  useTheme,
-} from '@mui/material';
+import { Autocomplete, CircularProgress, TextField } from '@mui/material';
 
 import { useField } from '@unform/core';
 import { CidadeService } from '../../../shared/services/api/cidades/CidadeService';
 import { useDebounce } from '../../../shared/hooks';
 
 type TAutoCompleteOption = {
-  id: number;
+  id: string;
   label: string;
 };
 
 interface IAutoCompleteCidadeProps {
   isExternalLoading?: boolean;
+  disabled?: boolean;
+  name?: string;
 }
 
 export const AutoCompleteCidade: React.FC<IAutoCompleteCidadeProps> = ({
   isExternalLoading = false,
+  disabled = false,
+  name = 'cidadeInteresse',
 }) => {
   const { fieldName, registerField, defaultValue, error, clearError } =
-    useField('cidadeInteresse');
+    useField(name);
   const { debounce } = useDebounce();
   const [isLoading, setIsLoading] = useState(false);
-  const theme = useTheme();
 
   const [opcoes, setOpcoes] = useState<TAutoCompleteOption[]>([]);
   const [busca, setBusca] = useState('');
@@ -55,8 +53,8 @@ export const AutoCompleteCidade: React.FC<IAutoCompleteCidadeProps> = ({
           console.log(result.message);
         } else {
           setOpcoes(
-            result.data.cidades.map((cidade) => ({
-              id: cidade.id,
+            result.data.map((cidade) => ({
+              id: cidade._id,
               label: cidade.cidade,
             }))
           );
@@ -101,16 +99,13 @@ export const AutoCompleteCidade: React.FC<IAutoCompleteCidadeProps> = ({
       renderInput={(params) => (
         <TextField
           {...params}
-          label="Cidade de interesse"
+          label={name == 'cidadeInteresse' ? 'Cidade de interesse' : 'Cidade'}
           error={!!error}
           helperText={error}
           fullWidth
-          margin="normal"
           variant="outlined"
           color="primary"
-          InputLabelProps={{
-            sx: { color: theme.palette.background.paper },
-          }}
+          disabled={disabled}
         />
       )}
     />

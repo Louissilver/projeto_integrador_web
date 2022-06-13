@@ -41,15 +41,14 @@ export const Empreendimento: React.FC = () => {
       location.pathname.replace('/empreendimentos/', '')
     ).then((result) => {
       setIsLoading(false);
-
       if (result instanceof Error) {
         console.log(result.message);
       } else {
         setProjetos({
-          to: result.empreendimentos.to,
-          titulo: result.empreendimentos.titulo,
-          texto: result.empreendimentos.texto,
-          imagens: result.empreendimentos.imagens,
+          to: result.to,
+          titulo: result.titulo,
+          texto: result.texto,
+          imagens: result.imagens,
         });
       }
     });
