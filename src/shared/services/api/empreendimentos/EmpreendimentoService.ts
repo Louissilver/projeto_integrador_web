@@ -6,6 +6,7 @@ type TEmpreendimentosComTotalCount = {
 
 export interface IListagemEmpreendimentos {
   id: number;
+  ativo: boolean;
   to: string;
   titulo: string;
   descricao: string;

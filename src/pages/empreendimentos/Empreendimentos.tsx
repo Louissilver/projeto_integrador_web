@@ -46,15 +46,18 @@ export const Empreendimentos: React.FC = () => {
         console.log(result.message);
       } else {
         setProjetos(
-          result.data.map((empreendimento) => ({
-            id: empreendimento.id,
-            to: empreendimento.to,
-            titulo: empreendimento.titulo,
-            descricao: empreendimento.descricao,
-            cidade: empreendimento.cidade,
-            thumb: empreendimento.thumb,
-            alt: empreendimento.alt,
-          }))
+          result.data
+            .filter((item) => item.ativo)
+            .map((empreendimento) => ({
+              id: empreendimento.id,
+              to: empreendimento.to,
+              ativo: empreendimento.ativo,
+              titulo: empreendimento.titulo,
+              descricao: empreendimento.descricao,
+              cidade: empreendimento.cidade,
+              thumb: empreendimento.thumb,
+              alt: empreendimento.alt,
+            }))
         );
       }
     });
