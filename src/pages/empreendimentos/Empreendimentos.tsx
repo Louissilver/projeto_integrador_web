@@ -1,4 +1,9 @@
-import { Box, CircularProgress, Typography } from '@mui/material';
+import {
+  Box,
+  CircularProgress,
+  Typography,
+  useMediaQuery,
+} from '@mui/material';
 import Secao from '../../shared/components/secao/Secao';
 import { LayoutBaseDePagina } from '../../shared/layouts/LayoutBaseDePagina';
 import ListaProjetos from '../../shared/components/lista-projetos/ListaProjetos';
@@ -11,8 +16,8 @@ import { useTheme } from '@mui/system';
 
 const secoes = [
   {
-    titulo: 'Nossos Empreendimentos',
-    texto: 'Venha conhecer nossos empreendimentos.',
+    titulo: 'Empreendimentos em destaque',
+    texto: 'Confira as novidades abaixo e encontre seu lar',
     imagem: undefined,
     botao: undefined,
     textAlign: 'center',
@@ -36,6 +41,8 @@ export const Empreendimentos: React.FC = () => {
   const [projetos, setProjetos] = useState<IListagemEmpreendimentos[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const theme = useTheme();
+  const smDown = useMediaQuery(theme.breakpoints.down('sm'));
+  const mdDown = useMediaQuery(theme.breakpoints.down('md'));
 
   useEffect(() => {
     setIsLoading(true);
@@ -65,6 +72,30 @@ export const Empreendimentos: React.FC = () => {
 
   return (
     <LayoutBaseDePagina>
+      <Box
+        display="flex"
+        flexDirection={smDown ? 'column' : mdDown ? 'column' : 'row'}
+        alignItems={smDown ? 'start' : mdDown ? 'start' : 'center'}
+        sx={{
+          backgroundImage: 'url("./fundoinicial.jpg")',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          mb: 3,
+        }}
+      >
+        <Typography
+          sx={{ fontWeight: 'bold' }}
+          width="100%"
+          align="left"
+          variant="h1"
+          fontSize={smDown ? '1rem' : mdDown ? '1rem' : '2rem'}
+          padding={smDown ? '1rem' : mdDown ? '1rem' : '8rem 5rem'}
+        >
+          Encontre seu <br />
+          imóvel ideal
+        </Typography>
+      </Box>
       <Box display="flex" flexDirection="column">
         {secoes.map(({ titulo, texto, imagem, botao, textAlign }, index) => {
           return (

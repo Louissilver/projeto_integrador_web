@@ -14,17 +14,17 @@ import { Avatar } from '@mui/material';
 import { useTheme } from '@mui/system';
 
 const pages = [
+  // {
+  //   label: 'Início',
+  //   to: 'inicio',
+  // },
   {
     label: 'Início',
-    to: 'inicio',
+    to: 'empreendimentos',
   },
   {
     label: 'Sobre',
     to: 'sobre',
-  },
-  {
-    label: 'Empreendimentos',
-    to: 'empreendimentos',
   },
   {
     label: 'Cadastro',
