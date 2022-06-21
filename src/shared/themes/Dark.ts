@@ -12,7 +12,7 @@ export const DarkTheme = createTheme({
     },
     secondary: {
       main: cyan[500],
-      dark: cyan[400],
+      dark: cyan[900],
       light: cyan[300],
       contrastText: '#ffffff',
     },
@@ -23,7 +23,7 @@ export const DarkTheme = createTheme({
   },
   typography: {
     allVariants: {
-      color: indigo[200],
+      color: cyan [900],
     },
   },
 });

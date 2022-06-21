@@ -84,21 +84,14 @@ const BarraDeAplicativos: React.FC = ({ children }) => {
             >
               <Avatar
                 alt="Logo da empresa"
-                src="./logob.svg"
+                src="./logob.png"
                 sx={{
-                  width: 56,
-                  height: 56,
+                  width: '20%',
+                  height: '20%',
                   mr: 1,
                 }}
+                variant="square"
               />
-              <Typography
-                variant="h6"
-                noWrap
-                component="div"
-                color={theme.palette.primary.contrastText}
-              >
-                CAP
-              </Typography>
             </Box>
 
             <Box
@@ -172,22 +165,13 @@ const BarraDeAplicativos: React.FC = ({ children }) => {
             <Box sx={{ flexGrow: 1 }} display="flex" alignItems="center">
               <Avatar
                 alt="Logo da empresa"
-                src="./logob.svg"
+                src="./logob1.png"
                 sx={{
                   width: { xs: theme.spacing(5), md: theme.spacing(7) },
                   height: { xs: theme.spacing(5), md: theme.spacing(7) },
                   display: { xs: 'flex', md: 'none' },
                 }}
               />
-              <Typography
-                variant="h6"
-                noWrap
-                component="div"
-                sx={{ ml: 1, flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-                color={theme.palette.primary.contrastText}
-              >
-                CAP
-              </Typography>
             </Box>
 
             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>

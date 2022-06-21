@@ -16,8 +16,8 @@ export const Inicio: React.FC = () => {
         height="100%"
         sx={{
           backgroundImage: {
-            md: 'linear-gradient( to right, #F83821 0%, #F83821 35%, #1D1F48 35.1%, #1D1F48 100% )',
-            xs: 'linear-gradient(  to bottom, #F83821 0%, #F83821 52%, #1D1F48 52.1%, #1D1F48 100% )',
+            md: 'linear-gradient( to right, #F93822 0%, #F93822 35%, #00263E 35.1%, #00263E 100% )',
+            xs: 'linear-gradient(  to bottom, #F93822 0%, #F93822 52%, #00263E 52.1%, #00263E 100% )',
           },
         }}
       >

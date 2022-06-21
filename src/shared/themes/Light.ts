@@ -8,13 +8,13 @@ export const LightTheme = createTheme({
       main: '#F93822',
       dark: cyan['A700'],
       light: cyan[200],
-      contrastText: '#ffffff',
+      contrastText: '#EFDBB2',
     },
     secondary: {
       main: '#F93822',
-      dark: indigo[900],
+      dark: '#013759',
       light: indigo[300],
-      contrastText: '#ffffff',
+      contrastText: '#EFDBB2',
     },
     background: {
       paper: '#5D6162',
@@ -23,7 +23,7 @@ export const LightTheme = createTheme({
   },
   typography: {
     allVariants: {
-      color: '#ffffff',
+      color: '#EFDBB2',
     },
   },
 });
