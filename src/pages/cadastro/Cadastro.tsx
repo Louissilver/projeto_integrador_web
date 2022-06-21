@@ -86,39 +86,39 @@ export const Cadastro: React.FC = () => {
       setCheckMarcadoError(true);
     } else {
       setCheckMarcadoError(false);
-    }
-    formValidationSchema
-      .validate(dados, { abortEarly: false })
-      .then((dadosValidados) => {
-        ClienteService.create(dadosValidados).then((result) => {
-          if (result instanceof Error) {
-            alert(result.message);
-          } else {
-            if (!checkMarcado) {
-              setCheckMarcadoError(true);
+      formValidationSchema
+        .validate(dados, { abortEarly: false })
+        .then((dadosValidados) => {
+          ClienteService.create(dadosValidados).then((result) => {
+            if (result instanceof Error) {
+              alert(result.message);
             } else {
-              setCheckMarcadoError(false);
-              formRef.current?.setData({
-                nomeCompleto: '',
-                telefone: '',
-                cidadeInteresse: undefined,
-              });
-              setCheckMarcado(false);
-              setOpen(true);
+              if (!checkMarcado) {
+                setCheckMarcadoError(true);
+              } else {
+                setCheckMarcadoError(false);
+                formRef.current?.setData({
+                  nomeCompleto: '',
+                  telefone: '',
+                  cidadeInteresse: undefined,
+                });
+                setCheckMarcado(false);
+                setOpen(true);
+              }
             }
-          }
-        });
-      })
-      .catch((errors: yup.ValidationError) => {
-        const validationErrors: IVFormErrors = {};
+          });
+        })
+        .catch((errors: yup.ValidationError) => {
+          const validationErrors: IVFormErrors = {};
 
-        errors.inner.forEach((error) => {
-          if (!error.path) return;
-          validationErrors[error.path] = error.message;
-        });
+          errors.inner.forEach((error) => {
+            if (!error.path) return;
+            validationErrors[error.path] = error.message;
+          });
 
-        formRef.current?.setErrors(validationErrors);
-      });
+          formRef.current?.setErrors(validationErrors);
+        });
+    }
   };
 
   const handleCheck = (event: BaseSyntheticEvent) => {
@@ -206,7 +206,7 @@ export const Cadastro: React.FC = () => {
               }}
             />
 
-            <AutoCompleteCidade  />
+            <AutoCompleteCidade />
 
             <FormGroup>
               <FormControlLabel
