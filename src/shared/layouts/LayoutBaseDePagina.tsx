@@ -12,12 +12,6 @@ export const LayoutBaseDePagina: React.FC = ({ children }) => {
   return (
     <Box
       minHeight="90%"
-      sx={{
-        backgroundImage:
-          'linear-gradient( to right, #F83821 0%,#F83821 1%, #FE9426 1.1%,#FE9426 2%, #EDDDB1 2.1%,#EDDDB1 3.2%, white 3.3%, white 96.6%, #009CE0 96.7%, #009CE0 97.8%, #003EA5 97.9%, #003EA5 98.9%, #1D1F48 99%, #1D1F48 100% )',
-        //backgroundImage:
-        // 'linear-gradient( to right, #F83821 1%, #FE9426 2%, #EDDDB1 3%, white 4%, white 97%, #009CE0 98%, #003EA5 99%, #1D1F48 100% )',
-      }}
     >
       {!match ? (
         <Container maxWidth={smDown ? 'sm' : mdDown ? 'md' : 'lg'}>

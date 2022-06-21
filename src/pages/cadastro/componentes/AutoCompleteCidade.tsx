@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Autocomplete, CircularProgress, TextField } from '@mui/material';
+import { Autocomplete, CircularProgress, TextField, useTheme } from '@mui/material';
 
 import { useField } from '@unform/core';
 import { CidadeService } from '../../../shared/services/api/cidades/CidadeService';
@@ -21,6 +21,7 @@ export const AutoCompleteCidade: React.FC<IAutoCompleteCidadeProps> = ({
   disabled = false,
   name = 'cidadeInteresse',
 }) => {
+  const theme = useTheme();
   const { fieldName, registerField, defaultValue, error, clearError } =
     useField(name);
   const { debounce } = useDebounce();
@@ -91,21 +92,24 @@ export const AutoCompleteCidade: React.FC<IAutoCompleteCidadeProps> = ({
       disabled={isExternalLoading}
       value={autoCompleteSelectedOption}
       onChange={(_, newValue) => {
-        setCidadeSelecionada(newValue?.label || '');
+        setCidadeSelecionada(newValue?.label || 'Cidade de interesse');
         setBusca('');
         clearError();
-      }}
+      }} 
       onInputChange={(_, newValue) => setBusca(newValue)}
       renderInput={(params) => (
         <TextField
           {...params}
-          label={name == 'cidadeInteresse' ? 'Cidade de interesse' : 'Cidade'}
+          label="Cidade de interesse"
           error={!!error}
           helperText={error}
           fullWidth
           variant="outlined"
           color="primary"
           disabled={disabled}
+          InputLabelProps={{
+            sx: {color: theme.palette.background.paper},
+          }}
         />
       )}
     />

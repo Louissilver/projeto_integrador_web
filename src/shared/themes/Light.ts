@@ -5,13 +5,13 @@ export const LightTheme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: '#0099CC',
+      main: '#F93822',
       dark: cyan['A700'],
       light: cyan[200],
       contrastText: '#ffffff',
     },
     secondary: {
-      main: '#091C48',
+      main: '#F93822',
       dark: indigo[900],
       light: indigo[300],
       contrastText: '#ffffff',

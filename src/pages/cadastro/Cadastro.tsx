@@ -206,7 +206,7 @@ export const Cadastro: React.FC = () => {
               }}
             />
 
-            <AutoCompleteCidade />
+            <AutoCompleteCidade  />
 
             <FormGroup>
               <FormControlLabel
