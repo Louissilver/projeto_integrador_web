@@ -77,7 +77,7 @@ export const Empreendimentos: React.FC = () => {
         flexDirection={smDown ? 'column' : mdDown ? 'column' : 'row'}
         alignItems={smDown ? 'start' : mdDown ? 'start' : 'center'}
         sx={{
-          backgroundImage: 'url("./fundoinicial.jpg")',
+          backgroundImage: 'url("./fundoinici.jpg")',
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
@@ -85,14 +85,14 @@ export const Empreendimentos: React.FC = () => {
         }}
       >
         <Typography
-          sx={{ fontWeight: 'bold' }}
+          sx={{ fontWeight: 'bold'}}
           width="100%"
           align="left"
           variant="h1"
-          fontSize={smDown ? '1rem' : mdDown ? '1rem' : '2rem'}
-          padding={smDown ? '1rem' : mdDown ? '1rem' : '8rem 5rem'}
+          fontSize={smDown ? '0rem' : mdDown ? '1rem' : '2rem'}
+          padding={smDown ? '1rem' : mdDown ? '1rem' : '3rem 10rem'}
         >
-          Encontre seu <br />
+         <br /><br /><br /><br /><br /><br />Encontre seu <br />
           imóvel ideal
         </Typography>
       </Box>
