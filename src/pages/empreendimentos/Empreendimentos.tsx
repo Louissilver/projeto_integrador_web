@@ -89,10 +89,10 @@ export const Empreendimentos: React.FC = () => {
           width="100%"
           align="left"
           variant="h1"
-          fontSize={smDown ? '0rem' : mdDown ? '1rem' : '2rem'}
-          padding={smDown ? '1rem' : mdDown ? '1rem' : '3rem 10rem'}
+          fontSize={smDown ? '1rem' : mdDown ? '1rem' : '2rem'}
+          padding={smDown ? '1rem' : mdDown ? '1rem' : '1rem 10rem'}
         >
-         <br /><br /><br /><br /><br /><br />Encontre seu <br />
+         <br /><br /><br /><br /><br /><br /><br />Encontre seu <br />
           imóvel ideal
         </Typography>
       </Box>
