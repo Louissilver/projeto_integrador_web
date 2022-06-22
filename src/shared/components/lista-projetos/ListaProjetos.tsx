@@ -5,6 +5,7 @@ import {
   CardActions,
   CardContent,
   CardMedia,
+  Grid,
   Typography,
   useMediaQuery,
   useTheme,
@@ -43,73 +44,76 @@ const ListaProjetos: React.FC<IListaProjetosProps> = ({ projetos }) => {
       width="100%"
       margin="2rem auto"
     >
-      {projetos.map(({ alt, thumb, titulo, cidade, descricao, to }) => {
-        return (
-          <Card
-            key={to}
-            sx={{
-              maxWidth: 345,
-              margin: '0.75rem auto',
-              border: `px solid ${theme.palette.grey[300]}`,
-            }}
-          >
-            <CardMedia
-              component="img"
-              alt={alt}
-              height="140"
-              image={thumb}
-              onClick={() => handleClick(to)}
-              sx={{
-                '&:hover': {
-                  cursor: 'pointer',
-                  opacity: '75%',
-                },
-              }}
-            />
-            <CardContent
-              sx={{
-                backgroundColor: theme.palette.background.default,
-                height: 120,
-                width: 350,
-                boxSizing: 'border-box',
-              }}
-            >
-              <Box
-                display="flex"
-                alignItems="center"
-                justifyContent="space-between"
+      <Grid container direction="row">
+        {projetos.map(({ alt, thumb, titulo, cidade, descricao, to }) => {
+          return (
+            <Grid key={to} item xs={12} md={4}>
+              <Card
+                sx={{
+                  maxWidth: 345,
+                  margin: '0.75rem auto',
+                  border: `px solid ${theme.palette.grey[300]}`,
+                }}
               >
-                <Typography
-                  gutterBottom
-                  color={theme.palette.background.paper}
-                  variant="h5"
-                  component="div"
+                <CardMedia
+                  component="img"
+                  alt={alt}
+                  height="140"
+                  image={thumb}
+                  onClick={() => handleClick(to)}
+                  sx={{
+                    '&:hover': {
+                      cursor: 'pointer',
+                      opacity: '75%',
+                    },
+                  }}
+                />
+                <CardContent
+                  sx={{
+                    backgroundColor: theme.palette.background.default,
+                    height: 120,
+                    width: 350,
+                    boxSizing: 'border-box',
+                  }}
                 >
-                  {titulo}
-                </Typography>
-                <Typography
-                  gutterBottom
-                  color={theme.palette.grey[500]}
-                  variant="caption"
-                  component="div"
+                  <Box
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="space-between"
+                  >
+                    <Typography
+                      gutterBottom
+                      color={theme.palette.background.paper}
+                      variant="h5"
+                      component="div"
+                    >
+                      {titulo}
+                    </Typography>
+                    <Typography
+                      gutterBottom
+                      color={theme.palette.grey[500]}
+                      variant="caption"
+                      component="div"
+                    >
+                      {cidade}
+                    </Typography>
+                  </Box>
+                  <Typography variant="body2" color="text.secondary">
+                    {descricao}
+                  </Typography>
+                </CardContent>
+                <CardActions
+                  sx={{ backgroundColor: theme.palette.background.default }}
                 >
-                  {cidade}
-                </Typography>
-              </Box>
-              <Typography variant="body2" color="text.secondary">
-                {descricao}
-              </Typography>
-            </CardContent>
-            <CardActions
-              sx={{ backgroundColor: theme.palette.background.default }}
-            >
-              <Button size="small" onClick={() => handleClick(to)}>
-                Ver mais
-              </Button>
-            </CardActions>
-          </Card>
-        );
-      })}
+                  <Button size="small" onClick={() => handleClick(to)}>
+                    Ver mais
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+          );
+        })}
+      </Grid>
     </Box>
   );
 };
