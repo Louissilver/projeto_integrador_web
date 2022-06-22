@@ -37,7 +37,7 @@ const Secao: React.FC<ISecaoProps> = ({
   return (
     <Box display="flex" flexDirection="column" margin="0 0 2rem 0">
       {titulo && <Titulo titulo={titulo} align={titleAlign} />}
-
+      
       {subtitulo && (
         <Typography
           align={subtitleAlign}

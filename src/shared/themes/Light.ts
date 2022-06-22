@@ -6,8 +6,8 @@ export const LightTheme = createTheme({
     mode: 'light',
     primary: {
       main: '#F93822',
-      dark: cyan['A700'],
-      light: cyan[200],
+      dark: '#bf1300',
+      light: cyan[900],
       contrastText: '#EFDBB2',
     },
     secondary: {

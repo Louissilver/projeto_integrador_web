@@ -14,6 +14,7 @@ const Titulo: React.FC<ITituloProps> = ({ titulo, align }) => {
       variant="h4"
       color={theme.palette.primary.main}
       textAlign={align === 'justify' ? 'justify' : 'center'}
+      sx={{ fontWeight: 'bold' }}
     >
       {titulo}
     </Typography>
