@@ -36,15 +36,15 @@ const contatos = [
 
 const enderecos = [
   {
-    label: 'Matriz: R. Gomes Jardim, 207 - Centro, Novo Hamburgo - RS, 93510-370',
+    label: 'Matriz: R. Gomes Jardim, 207 | Sala 11 - Centro, Novo Hamburgo - RS, 93510-370',
     icon: 'apartment',
     to: 'https://goo.gl/maps/SyazhEaCz7KXmEmr7',
   },
   {
     label:
-      'Filial: Av. Santos Ferreira, 495 - Marechal Rondon, Canoas - RS, 92020-000',
+      'Filial: R. Sete Povos, 330 | Sala 07 - Mal. Rondon, Canoas - RS, 92020-340',
     icon: 'home',
-    to: 'https://goo.gl/maps/cygUXZyMwL8QLzWRA',
+    to: 'https://goo.gl/maps/S4VdsyeCXjdWpHZP7',
   },
 ];
 
@@ -165,7 +165,7 @@ export const Rodape = () => {
           textAlign: 'center',
         }}
       >
-        &copy; Copyright 2022 - CAP SERVIÇOS IMOBILIARIOS LTDA | CNPJ: 28.780.520/0001-83
+        &copy; Copyright 2022 - MOVE.SE CONEXÃO IMOBILIÁRIA LTDA | CNPJ: 28.780.520/0001-83
         <br />
         CRECI: 25.527J
       </Typography>

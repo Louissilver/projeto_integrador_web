@@ -73,7 +73,7 @@ const Secao: React.FC<ISecaoProps> = ({
           variant="contained"
           size="large"
           sx={{
-            color: theme.palette.secondary.main,
+            color: theme.palette.secondary.contrastText,
             width: mdDown ? '95%' : '40%',
             textTransform: 'uppercase',
             fontWeight: 'lighter',

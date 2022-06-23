@@ -90,7 +90,7 @@ export const Empreendimentos: React.FC = () => {
           align="left"
           variant="h1"
           fontSize={smDown ? '1rem' : mdDown ? '1rem' : '2rem'}
-          padding={smDown ? '1rem' : mdDown ? '1rem' : '5.5rem 9rem 10rem'}
+          padding={smDown ? '1rem' : mdDown ? '1rem' : '5.5rem 7.8rem 10rem'}
         >
          Movendo pessoas a uma vida melhor
         </Typography>
