@@ -105,9 +105,9 @@ export const Rodape = () => {
   return (
     <Box
       component="footer"
-      bgcolor={theme.palette.secondary.main}
+      bgcolor={theme.palette.primary.main}
       padding={mdDown ? theme.spacing(0) : theme.spacing(3)}
-      color={theme.palette.secondary.contrastText}
+      color={theme.palette.primary.contrastText}
     >
       <Box
         height="100%"

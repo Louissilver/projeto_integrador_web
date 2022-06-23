@@ -16,8 +16,8 @@ import { useTheme } from '@mui/system';
 
 const secoes = [
   {
-    titulo: 'Empreendimentos em destaque',
-    texto: 'Confira as novidades abaixo e encontre seu lar',
+    titulo: 'Encontre seu lar aqui',
+    texto: 'Confira as novidades abaixo',
     imagem: undefined,
     botao: undefined,
     textAlign: 'center',
@@ -90,10 +90,9 @@ export const Empreendimentos: React.FC = () => {
           align="left"
           variant="h1"
           fontSize={smDown ? '1rem' : mdDown ? '1rem' : '2rem'}
-          padding={smDown ? '1rem' : mdDown ? '1rem' : '1rem 10rem'}
+          padding={smDown ? '1rem' : mdDown ? '1rem' : '9rem 8rem'}
         >
-         <br /><br /><br /><br /><br /><br /><br />Encontre seu <br />
-          imóvel ideal
+         Movendo pessoas a uma vida melhor
         </Typography>
       </Box>
       <Box display="flex" flexDirection="column">

@@ -5,14 +5,14 @@ export const LightTheme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: '#F93822',
-      dark: '#bf1300',
+      main: '#00263d',
+      dark: '#dd1701',
       light: cyan[900],
       contrastText: '#EFDBB2',
     },
     secondary: {
       main: '#F93822',
-      dark: '#013759',
+      dark: '#00263d',
       light: indigo[300],
       contrastText: '#EFDBB2',
     },

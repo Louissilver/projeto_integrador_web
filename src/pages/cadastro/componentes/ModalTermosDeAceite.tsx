@@ -145,7 +145,7 @@ const ModalTermosDeAceite: React.FC<IModalTermosDeAceiteProps> = ({
             component="h2"
             marginBottom={1}
           >
-            Termos de aceite
+            Termo de responsabilidade
           </Typography>
           <Box overflow="auto" height="90%">
             <Typography

@@ -150,7 +150,7 @@ export const Cadastro: React.FC = () => {
           light={false}
           sx={{
             '&::before, &::after': {
-              borderColor: 'background.paper',
+              borderColor: 'secondary.main',
             },
           }}
         >
@@ -217,14 +217,15 @@ export const Cadastro: React.FC = () => {
                     onClick={(event) => {
                       handleCheck(event);
                     }}
+                    
                   />
                 }
                 label={
                   <Box display="flex">
-                    <Typography sx={{ color: theme.palette.secondary.main }}>
-                      Declaro que li e aceito os
+                    <Typography sx={{ color: theme.palette.primary.main }}>
+                      Aceito os
                     </Typography>
-                    <ModalTermosDeAceite label="&nbsp;termos." />
+                    <ModalTermosDeAceite label="&nbsp;termos de responsabilidade"  />
                   </Box>
                 }
               />
