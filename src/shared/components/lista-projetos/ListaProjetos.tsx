@@ -47,24 +47,27 @@ const ListaProjetos: React.FC<IListaProjetosProps> = ({ projetos }) => {
       <Grid container direction="row">
         {projetos.map(({ alt, thumb, titulo, cidade, descricao, to }) => {
           return (
-            <Grid key={to} item xs={12} md={4}>
+            <Grid key={to} item xs={12} md={6}>
               <Card
                 sx={{
-                  maxWidth: 345,
-                  margin: '0.75rem auto',
+                  maxWidth: '80%',
+                  margin: '2rem auto',
                   border: `px solid ${theme.palette.grey[300]}`,
+                  filter: 'grayscale(100%)',
+                  '&:hover': {
+                    filter: 'grayscale(0)',
+                  },
                 }}
               >
                 <CardMedia
                   component="img"
                   alt={alt}
-                  height="140"
+                  height="280"
                   image={thumb}
                   onClick={() => handleClick(to)}
                   sx={{
                     '&:hover': {
                       cursor: 'pointer',
-                      opacity: '75%',
                     },
                   }}
                 />
@@ -72,7 +75,7 @@ const ListaProjetos: React.FC<IListaProjetosProps> = ({ projetos }) => {
                   sx={{
                     backgroundColor: theme.palette.background.default,
                     height: 120,
-                    width: 350,
+                    width: '100%',
                     boxSizing: 'border-box',
                   }}
                 >
@@ -83,7 +86,7 @@ const ListaProjetos: React.FC<IListaProjetosProps> = ({ projetos }) => {
                   >
                     <Typography
                       gutterBottom
-                      color={theme.palette.background.paper}
+                      color={theme.palette.secondary.main}
                       variant="h5"
                       component="div"
                     >
