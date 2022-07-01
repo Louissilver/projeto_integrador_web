@@ -83,12 +83,16 @@ const BarraDeAplicativos: React.FC = ({ children }) => {
               justifyContent="space-between"
             >
               <Avatar
+                onClick={() => navigate('/inicio')}
                 alt="Logo da empresa"
                 src="./logob.png"
                 sx={{
                   width: '20%',
                   height: '20%',
                   mr: 1,
+                  '&:hover': {
+                    cursor: 'pointer',
+                  },
                 }}
                 variant="square"
               />
@@ -162,14 +166,24 @@ const BarraDeAplicativos: React.FC = ({ children }) => {
               </Menu>
             </Box>
 
-            <Box sx={{ flexGrow: 1 }} display="flex" alignItems="center">
+            <Box
+              sx={{
+                flexGrow: 1,
+              }}
+              display="flex"
+              alignItems="center"
+            >
               <Avatar
+                onClick={() => navigate('/inicio')}
                 alt="Logo da empresa"
                 src="./logob1.png"
                 sx={{
                   width: { xs: theme.spacing(5), md: theme.spacing(7) },
                   height: { xs: theme.spacing(5), md: theme.spacing(7) },
                   display: { xs: 'flex', md: 'none' },
+                  '&:hover': {
+                    cursor: 'pointer',
+                  },
                 }}
               />
             </Box>
