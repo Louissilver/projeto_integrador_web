@@ -85,14 +85,14 @@ export const Empreendimentos: React.FC = () => {
         }}
       >
         <Typography
-          sx={{ fontWeight: 'bold'}}
+          sx={{ fontWeight: 'bold' }}
           width="100%"
           align="left"
           variant="h1"
           fontSize={smDown ? '1rem' : mdDown ? '1rem' : '2rem'}
           padding={smDown ? '1rem' : mdDown ? '1rem' : '5.5rem 7.8rem 10rem'}
         >
-         Movendo pessoas a uma vida melhor
+          Movendo pessoas para uma vida melhor
         </Typography>
       </Box>
       <Box display="flex" flexDirection="column">
