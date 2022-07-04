@@ -44,9 +44,9 @@ const formValidationSchema: yup.SchemaOf<IFormData> = yup.object().shape({
 
 const secoes = [
   {
-    titulo: 'O que é a CAP?',
+    titulo: 'Deseja comprar o seu imóvel?',
     texto:
-      'Nunc a libero at magna viverra molestie. Etiam mi urna, euismod id purus a, lacinia congue turpis. Vestibulum rhoncus at velit id sodales. Suspendisse dignissim sem ex, eget ultricies lectus efficitur et. Morbi ac diam nunc. Fusce sodales consectetur dolor, ut tristique odio pharetra eu. Maecenas ultrices, tortor ac pretium molestie, lectus lorem lacinia eros, varius facilisis mauris sem nec ipsum.',
+      'Cadastre-se abaixo para obter mais informações sobre os nossos imóveis. <br/>Para uma atendimento instantâneo clique no botão abaixo. ',
     imagem: undefined,
     botao: 'Entre em contato',
     textAlign: 'center',
