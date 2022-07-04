@@ -27,7 +27,7 @@ const pages = [
     to: 'sobre',
   },
   {
-    label: 'Cadastro',
+    label: 'Comprar',
     to: 'cadastro',
   },
   {
