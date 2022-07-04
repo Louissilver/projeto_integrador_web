@@ -36,7 +36,8 @@ const contatos = [
 
 const enderecos = [
   {
-    label: 'Matriz: R. Gomes Jardim, 207 | Sala 11 - Centro, Novo Hamburgo - RS, 93510-370',
+    label:
+      'Matriz: R. Gomes Jardim, 207 | Sala 11 - Centro, Novo Hamburgo - RS, 93510-370',
     icon: 'apartment',
     to: 'https://goo.gl/maps/SyazhEaCz7KXmEmr7',
   },
@@ -122,7 +123,11 @@ export const Rodape = () => {
           padding={theme.spacing(2, 5)}
           alignContent="center"
         >
-          <Typography padding={theme.spacing(0, 2)} variant="h4" color={theme.palette.secondary.contrastText}>
+          <Typography
+            padding={theme.spacing(0, 2)}
+            variant="h4"
+            color={theme.palette.secondary.contrastText}
+          >
             Contatos:
           </Typography>
           <List component="nav">
@@ -142,7 +147,11 @@ export const Rodape = () => {
           padding={theme.spacing(2, 5)}
           alignContent="center"
         >
-          <Typography padding={theme.spacing(0, 2)} variant="h4" color={theme.palette.secondary.contrastText}>
+          <Typography
+            padding={theme.spacing(0, 2)}
+            variant="h4"
+            color={theme.palette.secondary.contrastText}
+          >
             Endereços:
           </Typography>
           <List component="nav">
@@ -165,7 +174,8 @@ export const Rodape = () => {
           textAlign: 'center',
         }}
       >
-        &copy; Copyright 2022 - MOVE.SE CONEXÃO IMOBILIÁRIA LTDA | CNPJ: 28.780.520/0001-83
+        &copy; Copyright 2022 - MOVE.SE CONEXÃO IMOBILIÁRIA LTDA | CNPJ:
+        28.780.520/0001-83
         <br />
         CRECI: 25.527J
       </Typography>
