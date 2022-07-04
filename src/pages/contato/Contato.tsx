@@ -13,7 +13,7 @@ const secoes = [
   {
     titulo: 'Trabalhe conosco',
     texto:
-      'Nunc a libero at magna viverra molestie. Etiam mi urna, euismod id purus a, lacinia congue turpis. Vestibulum rhoncus at velit id sodales. Suspendisse dignissim sem ex, eget ultricies lectus efficitur et. Morbi ac diam nunc. Fusce sodales consectetur dolor, ut tristique odio pharetra eu. Maecenas ultrices, tortor ac pretium molestie, lectus lorem lacinia eros, varius facilisis mauris sem nec ipsum.',
+      'Quer fazer parte do nosso time?<br/>Te damos as ferramentas para ser um corretor de sucesso e alcançar os seus obejtivos pessoais.<br/>Clique no botão abaixo.',
     imagem: undefined,
     botao: 'Quero me candidatar',
     textAlign: 'center',
