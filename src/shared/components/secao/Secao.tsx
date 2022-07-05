@@ -35,9 +35,9 @@ const Secao: React.FC<ISecaoProps> = ({
   const mdDown = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
-    <Box display="flex" flexDirection="column" margin="0 0 2rem 0">
+    <Box display="flex" flexDirection="column" margin="0 0 2rem 0" width="100%">
       {titulo && <Titulo titulo={titulo} align={titleAlign} />}
-      
+
       {subtitulo && (
         <Typography
           align={subtitleAlign}
