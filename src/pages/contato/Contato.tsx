@@ -24,33 +24,45 @@ const secoes = [
 const questoes = [
   {
     id: 'questao-1',
-    titulo: 'Qual a primeira pergunta do FAQ?',
+    titulo: 'O que precisa para comprar um imóvel?',
     resposta:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacinia pretium lacus. Praesent purus elit, tincidunt eu dictum id, aliquet ac leo. Maecenas mollis consequat ante sit amet viverra. Quisque a fermentum turpis, quis viverra lectus. Nullam sodales justo quis eros molestie lacinia. Phasellus sem dolor, auctor vel tellus sed, lobortis accumsan risus. Nullam libero odio, hendrerit quis luctus in, blandit in nisi.',
+      'Para comprar o imóvel através de financiamento, precisa ter renda comprovada e não possuir restrições cadastrais em seu CPF. Se você quer tirar dúvidas se a rua renda é compatível com o financiamento do imóvel ou se seu CPF está livre para o financiamento, faça seu cadastro aqui no site que em poucos instantes o responsável entrará em contato.',
   },
   {
     id: 'questao-2',
-    titulo: 'Qual a segunda pergunta do FAQ?',
+    titulo: 'Qual a renda mínima necessária?',
     resposta:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacinia pretium lacus. Praesent purus elit, tincidunt eu dictum id, aliquet ac leo. Maecenas mollis consequat ante sit amet viverra. Quisque a fermentum turpis, quis viverra lectus. Nullam sodales justo quis eros molestie lacinia. Phasellus sem dolor, auctor vel tellus sed, lobortis accumsan risus. Nullam libero odio, hendrerit quis luctus in, blandit in nisi.',
+      'Não existe renda mínima. O financiamento habitacional é único. Cada negociação é diferente. Para cada cliente há uma negociação diferente, sempre com base no seu perfil financeiro, e isso acontece porque o financiamento é liberado com base no perfil financeiro de cada cliente. Para verificar o seu, basta efetuar seu cadastro aqui em nosso site.',
   },
   {
     id: 'questao-3',
-    titulo: 'Qual a terceira pergunta do FAQ?',
+    titulo: 'Já possuo um imóvel financiado, posso financiar outro?',
     resposta:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacinia pretium lacus. Praesent purus elit, tincidunt eu dictum id, aliquet ac leo. Maecenas mollis consequat ante sit amet viverra. Quisque a fermentum turpis, quis viverra lectus. Nullam sodales justo quis eros molestie lacinia. Phasellus sem dolor, auctor vel tellus sed, lobortis accumsan risus. Nullam libero odio, hendrerit quis luctus in, blandit in nisi.',
+      'Depende da análise de crédito que será realizada pelo agente financeiro. Para fazer sua análise, basta efetuar o cadastro aqui em nosso site. ',
   },
   {
     id: 'questao-4',
-    titulo: 'Qual a quarta pergunta do FAQ?',
+    titulo: 'Já falei com outros corretores e nenhum consegue imóvel 100% parcelado, por que isso?',
     resposta:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacinia pretium lacus. Praesent purus elit, tincidunt eu dictum id, aliquet ac leo. Maecenas mollis consequat ante sit amet viverra. Quisque a fermentum turpis, quis viverra lectus. Nullam sodales justo quis eros molestie lacinia. Phasellus sem dolor, auctor vel tellus sed, lobortis accumsan risus. Nullam libero odio, hendrerit quis luctus in, blandit in nisi.',
+      'Nós capacitamos nosso time para prestar o melhor atendimento possível. Se por ventura sua condição ficou fora do seu orçamento atual, basta falar com um de nossos especialistas para que juntos consigam elaborar um plano de ação para que sua compra seja viabilizada. Para ter essa consultoria de forma gratuita, basta efetuar seu cadastro aqui em nosso site e informar sua solicitação, te orientaremos em todas as etapas até que você conquiste seu lar.',
   },
   {
     id: 'questao-5',
-    titulo: 'Qual a quinta pergunta do FAQ?',
+    titulo: 'Tem como financiar o imóvel por outros bancos?',
     resposta:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lacinia pretium lacus. Praesent purus elit, tincidunt eu dictum id, aliquet ac leo. Maecenas mollis consequat ante sit amet viverra. Quisque a fermentum turpis, quis viverra lectus. Nullam sodales justo quis eros molestie lacinia. Phasellus sem dolor, auctor vel tellus sed, lobortis accumsan risus. Nullam libero odio, hendrerit quis luctus in, blandit in nisi.',
+      'Outros bancos privados como Santander, Itaú, Bradesco e outros bancos também possuem a modalidade de financiamento habitacional, esse financiamento só é aceito para imóveis prontos e que possuem o habite-se (documento de conclusão de obra emitido pela prefeitura). E mesmo assim, esses bancos não financiam imóveis com as taxas de juros praticadas nem subsídios do Programa Casa Verde e Amarela. Ou seja, a compra por outros bancos normalmente inviabiliza a negociação. Para tirar dúvidas mais específicas, basta efetuar seu cadastro aqui em nosso site e falar com nossos especialistas em primeiro imóvel.',
+  },
+  {
+    id: 'questao-6',
+    titulo: 'Qual a documentação que preciso enviar para financiar um imóvel?',
+    resposta:
+      '- Documento de identificação, comprovante de residência, certidão de estado civil, 2 últimos contracheques, carteira de trabalho, extrato do FGTS ',
+  },
+  {
+    id: 'questao-7',
+    titulo: 'Tem como financiar o imóvel por outros bancos?',
+    resposta:
+      'Outros bancos privados como Santander, Itaú, Bradesco e outros bancos também possuem a modalidade de financiamento habitacional, esse financiamento só é aceito para imóveis prontos e que possuem o habite-se (documento de conclusão de obra emitido pela prefeitura). E mesmo assim, esses bancos não financiam imóveis com as taxas de juros praticadas nem subsídios do Programa Casa Verde e Amarela. Ou seja, a compra por outros bancos normalmente inviabiliza a negociação. Para tirar dúvidas mais específicas, basta efetuar seu cadastro aqui em nosso site e falar com nossos especialistas em primeiro imóvel.',
   },
 ];
 
