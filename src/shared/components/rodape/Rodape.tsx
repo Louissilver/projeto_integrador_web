@@ -24,7 +24,7 @@ const contatos = [
   },
   {
     label: 'WhatsApp: +55 51 99928-2800',
-    icon: 'whatsapp',
+    icon: 'call',
     to: 'https://web.whatsapp.com/send?phone=5551999282800&text=Oi%2C+Maike...',
   },
   {
