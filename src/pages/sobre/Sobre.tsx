@@ -1,110 +1,273 @@
-import { Box, Divider } from '@mui/material';
+import { Box, List, ListItem, Typography, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material';
-import Secao from '../../shared/components/secao/Secao';
-import { LayoutBaseDePagina } from '../../shared/layouts/LayoutBaseDePagina';
 
-const secoes = [
-  {
-    titulo: 'Nossa história e propósito',
-    texto: `&nbsp;&nbsp;&nbsp;&nbsp;A CAP foi fundada pelo Maike Terres e Lucas Armando em 2019, teve origem a partir de uma vontade imensa de criar um ambiente próspero onde tivessem oportunidades para todos que estivessem dispostos a crescer, tendo como objetivo principal o desenvolvimento de pessoas para se tornarem excelentes corretores de imóveis, transformando a visão do mercado sobre esse profissional.
-    Desde o início da empresa trabalhamos com VENDA de imóveis, hoje possuímos também um projeto de marketing digital que permite o desenvolvimento da empresa através do online em paralelo ao físico.
-    
-    A Equipe da CAP é formada por aproximadamente 45 pessoas, sendo parte administrativa e parte comercial.
-    Possuímos hoje imóveis em 15 cidades, somando mais de 100 empreendimentos ativos.
-    `,
-    imagem: undefined,
-    botao: undefined,
-    textAlign: 'justify',
-    titleAlign: 'center',
-  },
-  {
-    titulo: undefined,
-    texto:
-      '&nbsp;&nbsp;&nbsp;&nbsp;Nosso propósito como empresa é oferecer um serviço de excelência nas negociações imobiliárias. Acima de tudo capacitando o profissional para entregar um resultado de qualidade e proporcionar a oportunidade de realizar seus próprios objetivos pessoais e profissionais de acordo com a sua ambição.',
-    imagem: undefined,
-    botao: undefined,
-    textAlign: 'justify',
-    titleAlign: 'center',
-  },
-];
-
-const valores = [
-  {
-    titulo: 'Nossa Missão',
-    subtitulo: 'Ser agente catalisador de sonhos de colaboradores e clientes.',
-    imagem: undefined,
-    botao: undefined,
-    subtitleAlign: 'center',
-    titleAlign: 'center',
-  },
-  {
-    titulo: 'Nossa Visão',
-    subtitulo:
-      'Ser referência de qualidade e eficiência no mercado imobiliário do RS até 2023.',
-    imagem: undefined,
-    botao: undefined,
-    subtitleAlign: 'center',
-    titleAlign: 'center',
-  },
-  {
-    titulo: 'Nossos Valores',
-    subtitulo: 'Entender, capacitar e realizar.',
-    imagem: undefined,
-    botao: undefined,
-    subtitleAlign: 'center',
-    titleAlign: 'center',
-  },
-];
 
 export const Sobre: React.FC = () => {
   const theme = useTheme();
+  const smDown = useMediaQuery(theme.breakpoints.down('sm'));
+  const mdDown = useMediaQuery(theme.breakpoints.down('md'));
+
   return (
-    <LayoutBaseDePagina>
-      <Box display="flex" flexDirection="column">
-        <Box display="flex" flexDirection="column">
-          {valores.map(
-            (
-              { titulo, subtitulo, imagem, botao, subtitleAlign, titleAlign },
-              index
-            ) => {
-              return (
-                <Secao
-                  key={'secao-' + index}
-                  titulo={titulo}
-                  subtitulo={subtitulo}
-                  imagem={imagem}
-                  labelBotao={botao}
-                  subtitleAlign={
-                    subtitleAlign === 'justify' ? 'justify' : 'center'
-                  }
-                  titleAlign={titleAlign === 'justify' ? 'justify' : 'center'}
-                />
-              );
-            }
-          )}
-        </Box>
-        <Divider color={theme.palette.background.paper} />
-        <Box mt="2rem" display="flex" flexDirection="column">
-          {secoes.map(
-            (
-              { titulo, texto, imagem, botao, textAlign, titleAlign },
-              index
-            ) => {
-              return (
-                <Secao
-                  key={'secao-' + index}
-                  titulo={titulo}
-                  texto={texto}
-                  imagem={imagem}
-                  labelBotao={botao}
-                  textAlign={textAlign === 'justify' ? 'justify' : 'center'}
-                  titleAlign={titleAlign === 'justify' ? 'justify' : 'center'}
-                />
-              );
-            }
-          )}
-        </Box>
+    <Box display="flex" flexDirection="column">
+      <Box display="flex" flexDirection="column" sx={{
+        backgroundImage: 'url("./nossoproposito.jpg")',
+        backgroundColor: 'white',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: mdDown ? 'cover' : '60%',
+        backgroundPosition: mdDown ? '20vw' : 'right',
+        mb: 3,
+        minHeight: '70vh',
+        paddingLeft: smDown ? '2rem' : '5rem',
+        paddingTop: smDown ? '2rem' : '5rem',
+        boxSizing: 'border-box'
+      }}>
+        <Typography
+          margin="0 0 2rem 0"
+          variant="h4"
+          color={theme.palette.secondary.main}
+          sx={{ fontWeight: 'bold' }}
+          fontSize='2rem'
+        >
+          Nosso Propósito
+        </Typography>
+        <Typography
+          margin="0 0 1rem 0"
+          variant="h4"
+          fontSize='2rem'
+          color={theme.palette.primary.main}
+          sx={{ fontWeight: 'bold', paddingRight: '3rem', width: mdDown ? '70%' : '30%' }}
+        >{<i>Provocar mudanças que transformam vidas</i>}
+        </Typography>
       </Box>
-    </LayoutBaseDePagina>
+      <Box display="flex" flexDirection="column" sx={{
+        mb: 3,
+        minHeight: '70vh',
+        paddingLeft: smDown ? '2rem' : '5rem',
+        paddingTop: smDown ? '2rem' : '5rem',
+        boxSizing: 'border-box'
+      }}>
+        <Typography
+          margin="0 0 2rem 0"
+          variant="h4"
+          color={theme.palette.secondary.main}
+          sx={{ fontWeight: 'bold' }}
+          fontSize='2rem'
+        >
+          Nossos Valores
+        </Typography>
+        <Box>
+          <List
+            sx={{
+              display: 'flex',
+              flexDirection: mdDown ? 'column' : 'row',
+              listStyleType: 'disc',
+              pl: 1,
+              pb: mdDown ? 0 : 3,
+              '& .MuiListItem-root': {
+                display: 'list-item',
+              },
+            }}>
+            <ListItem>
+              <Typography
+                margin="0 0 1rem 0"
+                variant="h5"
+                fontSize='1.5rem'
+                color={theme.palette.primary.main}
+                sx={{ fontWeight: 'bold', paddingRight: '3rem' }}
+              >
+                Protagonismo
+              </Typography>
+            </ListItem>
+            <ListItem sx={{ color: theme.palette.primary.main }}>
+              <Typography
+                margin="0 0 1rem 0"
+                variant="h5"
+                fontSize='1.5rem'
+                color={theme.palette.primary.main}
+                sx={{ fontWeight: 'bold', paddingRight: '3rem' }}
+              >
+                Liberdade
+              </Typography>
+              <Typography
+                variant="caption"
+                color={theme.palette.primary.main}
+                sx={{ fontWeight: 'bold', paddingRight: '3rem' }}
+              >
+                (de tempo, geográfica e financeira)
+              </Typography>
+            </ListItem>
+            <ListItem>
+              <Typography
+                margin="0 0 1rem 0"
+                variant="h5"
+                fontSize='1.5rem'
+                color={theme.palette.primary.main}
+                sx={{ fontWeight: 'bold', paddingRight: '3rem' }}
+              >
+                Aprendizado
+              </Typography>
+            </ListItem>
+          </List>
+          <List
+            sx={{
+              display: 'flex',
+              flexDirection: mdDown ? 'column' : 'row',
+              listStyleType: 'disc',
+              pl: 1,
+              '& .MuiListItem-root': {
+                display: 'list-item',
+              },
+            }}>
+            <ListItem>
+              <Typography
+                margin="0 0 1rem 0"
+                variant="h5"
+                fontSize='1.5rem'
+                color={theme.palette.primary.main}
+                sx={{ fontWeight: 'bold', paddingRight: '3rem' }}
+              >
+                Transparência
+              </Typography>
+            </ListItem>
+            <ListItem>
+              <Typography
+                margin="0 0 1rem 0"
+                variant="h5"
+                fontSize='1.5rem'
+                color={theme.palette.primary.main}
+                sx={{ fontWeight: 'bold', paddingRight: '3rem' }}
+              >
+                Empatia
+              </Typography>
+            </ListItem>
+            <ListItem>
+              <Typography
+                margin="0 0 1rem 0"
+                variant="h5"
+                fontSize='1.5rem'
+                color={theme.palette.primary.main}
+                sx={{ fontWeight: 'bold', paddingRight: '3rem' }}
+              >
+                Foco
+              </Typography>
+            </ListItem>
+          </List>
+        </Box>
+
+      </Box>
+      <Box display="flex" flexDirection="column" sx={{
+        backgroundImage: 'url("./mapa.png")',
+        backgroundColor: theme.palette.primary.main,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: mdDown ? 'cover' : '60%',
+        backgroundPosition: mdDown ? '50vw' : 'right',
+        mb: 3,
+        minHeight: '70vh',
+        paddingLeft: smDown ? '2rem' : '5rem',
+        paddingTop: smDown ? '2rem' : '5rem',
+        boxSizing: 'border-box'
+      }}>
+        <Typography
+          margin="0 0 2rem 0"
+          variant="h4"
+          color={theme.palette.secondary.main}
+          sx={{ fontWeight: 'bold' }}
+          fontSize='2rem'
+        >
+          Nossa Visão
+        </Typography>
+        <Typography
+          margin="0 0 1rem 0"
+          variant="h4"
+          fontSize='1rem'
+          color={theme.palette.primary.contrastText}
+          sx={{ fontWeight: 'light', lineHeight: '2rem', paddingRight: '3rem', width: mdDown ? '50%' : '30%' }}
+        >
+          Atingir 100 franquias no Brasil até 2026,
+          gerando oportunidades e capacitando
+          o setor imobiliário do 1º imóvel.
+        </Typography>
+      </Box>
+      <Box display="flex" flexDirection="column" sx={{
+        mb: 3,
+        minHeight: '70vh',
+        paddingLeft: smDown ? '2rem' : '5rem',
+        paddingTop: smDown ? '2rem' : '5rem',
+        boxSizing: 'border-box'
+      }}>
+        <Typography
+          margin="0 0 2rem 0"
+          variant="h4"
+          color={theme.palette.secondary.main}
+          sx={{ fontWeight: 'bold' }}
+          fontSize='2rem'
+        >
+          Nossa Missão
+        </Typography>
+        <Box padding={0} margin={0} display='flex' flexDirection='column' minHeight='40vh'>
+
+          <Typography
+            variant="h5"
+            fontSize='1rem'
+            color={theme.palette.primary.main}
+            sx={{ paddingRight: '3rem', marginTop: '0.5rem' }}
+          >
+            {<b>1.</b>} Entregar a oportunidade de todo brasileiro viver com qualidade
+          </Typography>
+
+
+          <Typography
+            variant="h5"
+            fontSize='1rem'
+            color={theme.palette.primary.main}
+            sx={{ paddingRight: '3rem', marginTop: '0.5rem' }}
+          >
+            {<b>2.</b>} Impulsionar...
+          </Typography>
+
+
+          <Typography
+            variant="h5"
+            fontSize='1rem'
+            color={theme.palette.primary.main}
+            sx={{ paddingRight: '3rem', marginTop: '0.5rem' }}
+          >
+            {<b>3.</b>} Entregar oportunidade de viver melhor ao povo brasileiro
+          </Typography>
+
+
+          <Typography
+            variant="h5"
+            fontSize='1rem'
+            color={theme.palette.primary.main}
+            sx={{ paddingRight: '3rem', marginTop: '0.5rem' }}
+          >
+            {<b>4.</b>} Mover as pessoas às melhores oportunidades de viver melhor
+          </Typography>
+
+
+          <Typography
+            variant="h5"
+            fontSize='1rem'
+            color={theme.palette.primary.main}
+            sx={{ paddingRight: '3rem', marginTop: '0.5rem' }}
+          >
+            {<b>5.</b>} Entregar a melhor oportunidade a todo brasileiro de viver melhor
+          </Typography>
+
+
+          <Typography
+            variant="h5"
+            fontSize='1rem'
+            color={theme.palette.primary.main}
+            sx={{ paddingRight: '3rem', marginTop: '0.5rem' }}
+          >
+            {<b>6.</b>} Resolver o problema de moradia do brasileiro
+          </Typography>
+
+        </Box>
+
+      </Box>
+    </Box>
   );
 };
