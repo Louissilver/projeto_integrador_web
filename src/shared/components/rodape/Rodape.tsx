@@ -13,14 +13,14 @@ import { useTheme } from '@mui/system';
 
 const contatos = [
   {
-    label: 'Facebook: @imobiliariacap',
+    label: 'Facebook: @movese.imob',
     icon: 'facebook',
-    to: 'https://www.facebook.com/imobiliariacap',
+    to: 'https://www.facebook.com/movese.imob',
   },
   {
-    label: 'Instagram: @capimob',
+    label: 'Instagram: @movese.imob',
     icon: 'center_focus_weak',
-    to: 'https://www.instagram.com/capimob/',
+    to: 'https://www.instagram.com/movese.imob/',
   },
   {
     label: 'WhatsApp: +55 51 99928-2800',

@@ -10,10 +10,10 @@ export const Sobre: React.FC = () => {
   return (
     <Box display="flex" flexDirection="column">
       <Box display="flex" flexDirection="column" sx={{
-        backgroundImage: 'url("./nossoproposito.jpg")',
+        backgroundImage: 'url("./nossoproposito.svg")',
         backgroundColor: 'white',
         backgroundRepeat: 'no-repeat',
-        backgroundSize: mdDown ? 'cover' : '60%',
+        backgroundSize: mdDown ? 'cover' : '75%',
         backgroundPosition: mdDown ? '20vw' : 'right',
         mb: 3,
         minHeight: '70vh',
@@ -75,7 +75,7 @@ export const Sobre: React.FC = () => {
                 color={theme.palette.primary.main}
                 sx={{ fontWeight: 'bold', paddingRight: '3rem' }}
               >
-                Protagonismo
+              <i>Protagonismo</i>
               </Typography>
             </ListItem>
             <ListItem sx={{ color: theme.palette.primary.main }}>
@@ -86,14 +86,14 @@ export const Sobre: React.FC = () => {
                 color={theme.palette.primary.main}
                 sx={{ fontWeight: 'bold', paddingRight: '3rem' }}
               >
-                Liberdade
+              <i>Liberdade</i>
               </Typography>
               <Typography
                 variant="caption"
                 color={theme.palette.primary.main}
-                sx={{ fontWeight: 'bold', paddingRight: '3rem' }}
+                sx={{ fontWeight: '', paddingRight: '3rem' }}
               >
-                (de tempo, geográfica e financeira)
+              (de tempo, geográfica e financeira)
               </Typography>
             </ListItem>
             <ListItem>
@@ -104,7 +104,7 @@ export const Sobre: React.FC = () => {
                 color={theme.palette.primary.main}
                 sx={{ fontWeight: 'bold', paddingRight: '3rem' }}
               >
-                Aprendizado
+              <i>Aprendizado</i>
               </Typography>
             </ListItem>
           </List>
@@ -126,7 +126,7 @@ export const Sobre: React.FC = () => {
                 color={theme.palette.primary.main}
                 sx={{ fontWeight: 'bold', paddingRight: '3rem' }}
               >
-                Transparência
+              <i>Transparência</i>
               </Typography>
             </ListItem>
             <ListItem>
@@ -137,7 +137,7 @@ export const Sobre: React.FC = () => {
                 color={theme.palette.primary.main}
                 sx={{ fontWeight: 'bold', paddingRight: '3rem' }}
               >
-                Empatia
+              <i>Empatia</i>
               </Typography>
             </ListItem>
             <ListItem>
@@ -148,7 +148,7 @@ export const Sobre: React.FC = () => {
                 color={theme.palette.primary.main}
                 sx={{ fontWeight: 'bold', paddingRight: '3rem' }}
               >
-                Foco
+              <i>Foco</i>
               </Typography>
             </ListItem>
           </List>
@@ -159,8 +159,8 @@ export const Sobre: React.FC = () => {
         backgroundImage: 'url("./mapa.png")',
         backgroundColor: theme.palette.primary.main,
         backgroundRepeat: 'no-repeat',
-        backgroundSize: mdDown ? 'cover' : '60%',
-        backgroundPosition: mdDown ? '50vw' : 'right',
+        backgroundSize: mdDown ? 'cover' : '70%',
+        backgroundPosition: mdDown ? '20vw' : 'right',
         mb: 3,
         minHeight: '70vh',
         paddingLeft: smDown ? '2rem' : '5rem',
@@ -177,14 +177,14 @@ export const Sobre: React.FC = () => {
           Nossa Visão
         </Typography>
         <Typography
-          margin="0 0 1rem 0"
-          variant="h4"
+          margin="0 0 2rem 0"
+          variant="h5"
           fontSize='1rem'
           color={theme.palette.primary.contrastText}
-          sx={{ fontWeight: 'light', lineHeight: '2rem', paddingRight: '3rem', width: mdDown ? '50%' : '30%' }}
+          sx={{ fontWeight: 'light', lineHeight: '2rem', paddingRight: '3rem', width: mdDown ? '300%' : '30%' }}
         >
-          Atingir 100 franquias no Brasil até 2026,
-          gerando oportunidades e capacitando
+          Atingir 100 franquias no Brasil até 2026,<br></br>
+          gerando oportunidades e capacitando<br></br>
           o setor imobiliário do 1º imóvel.
         </Typography>
       </Box>
