@@ -1,7 +1,7 @@
 {
   "name": "react-mui-typescript",
   "version": "0.1.0",
-  "homepage":"https://movese.com.br",
+  "homepage":"http://movese.com.br",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
