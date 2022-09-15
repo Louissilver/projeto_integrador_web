@@ -1,7 +1,7 @@
 {
   "name": "react-mui-typescript",
   "version": "0.1.0",
-  "homepage":"https://movese.com.br",
+  "homepage": ".",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
@@ -19,6 +19,7 @@
     "@unform/web": "^2.1.6",
     "axios": "^0.26.1",
     "dotenv": "^16.0.1",
+    "express": "^4.18.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-input-mask": "^2.0.4",

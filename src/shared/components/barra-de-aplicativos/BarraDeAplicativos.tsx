@@ -176,7 +176,7 @@ const BarraDeAplicativos: React.FC = ({ children }) => {
               <Avatar
                 onClick={() => navigate('/inicio')}
                 alt="Logo da empresa"
-                src="./logob1.png"
+                src="./logob.png"
                 sx={{
                   width: { xs: theme.spacing(5), md: theme.spacing(7) },
                   height: { xs: theme.spacing(5), md: theme.spacing(7) },

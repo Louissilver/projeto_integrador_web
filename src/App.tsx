@@ -1,4 +1,4 @@
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import './shared/forms/TraducoesYup';
 import { AppRoutes } from './routes';
 import BarraDeAplicativos from './shared/components/barra-de-aplicativos/BarraDeAplicativos';
@@ -8,12 +8,12 @@ import { AppThemeProvider } from './shared/contexts/ThemeContext';
 export const App = () => {
   return (
     <AppThemeProvider>
-      <BrowserRouter>
+      <HashRouter>
         <BarraDeAplicativos>
           <AppRoutes />
           <Rodape />
         </BarraDeAplicativos>
-      </BrowserRouter>
+      </HashRouter>
     </AppThemeProvider>
   );
 };
